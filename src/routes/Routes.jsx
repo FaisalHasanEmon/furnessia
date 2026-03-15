@@ -13,40 +13,14 @@ const router = createBrowserRouter([
         path:"/",
         element:<MainLayout></MainLayout>,
         children:[
-            {
-                path:"/",
-                element:<Home></Home>
-
-            },
-            {
-                path:"/shop",
-                element:<Shop></Shop>
-
-            },
-            {
-                path:"/dining",
-                element:<Dining></Dining>
-            },
-            {
-                path:"/bedroom",
-                element:<Bedroom></Bedroom>
-            },
-            {
-                path:"/living",
-                element:<Living></Living>
-            },
-            {
-                path:"/Office",
-                element:<Office></Office>
-            },
-            {
-                path:"/custom-order",
-                element:<CustomOrder></CustomOrder>
-            },
-            {
-                path:"/contact",
-                element:<Contact></Contact>
-            }
+            {   path:"/",               element:<Home></Home>                           },
+            {   path:"/shop",           element:<Shop></Shop>                           },
+            {   path:"/dining",         element:<Dining></Dining>                       },
+            {   path:"/bedroom",        element:<Bedroom></Bedroom>                     },
+            {   path:"/living",         element:<Living></Living>                       },
+            {   path:"/Office",         element:<Office></Office>                       },
+            {   path:"/custom-order",   element:<CustomOrder></CustomOrder>             },
+            {   path:"/contact",        element:<Contact></Contact>                     }
         ]
     }
 ])

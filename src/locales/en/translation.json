@@ -1,5 +1,11 @@
 {
   "welcome": "Welcome",
   "contact": "Contact Us",
-  "shop": "Shop Now"
+  "shop": "Shop",
+  "home": "Home",
+  "dining": "Dining",
+  "bedroom": "Bedroom",
+  "living": "Living",
+  "office": "Office",
+  "customOrder": "Custom Order"
 }

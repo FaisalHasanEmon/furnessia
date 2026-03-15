@@ -1,16 +1,86 @@
-# React + Vite
+## Furnis
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Furnis is a React single-page application built with Vite, React Router, Tailwind CSS and `i18next` for internationalization.
 
-Currently, two official plugins are available:
+This guide explains how to **clone**, **set up**, and **run** the project on your machine.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+> Replace `YOUR_GITHUB_USERNAME` and repository name in the commands below with the actual values for your repo if they differ.
 
-## React Compiler
+### 1. Prerequisites
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- **Node.js**: v18 or newer (LTS recommended)
+- **npm**: comes with Node.js
+- **Git**: to clone the repository
 
-## Expanding the ESLint configuration
+You can verify your versions with:
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+node -v
+npm -v
+git --version
+```
+
+### 2. Clone the repository
+
+```bash
+git clone https://github.com/YOUR_GITHUB_USERNAME/furnis.git
+cd furnis
+```
+
+If your project is in a subfolder inside the repo, `cd` into that folder (for example, `cd furnis/furnis`).
+
+### 3. Install dependencies
+
+From the project root (where `package.json` lives), run:
+
+```bash
+npm install
+```
+
+This will install all required dependencies (React, Vite, Tailwind CSS, i18next, React Router, etc.).
+
+### 4. Run the development server
+
+```bash
+npm run dev
+```
+
+Then open the URL shown in the terminal (usually `http://localhost:5173`) in your browser.
+
+### 5. Build for production
+
+To create an optimized production build:
+
+```bash
+npm run build
+```
+
+The built files will be output to the `dist` directory.
+
+### 6. Preview the production build
+
+After building, you can preview the production build locally:
+
+```bash
+npm run preview
+```
+
+### 7. Linting
+
+To run ESLint and check for code style or potential issues:
+
+```bash
+npm run lint
+```
+
+### 8. Project structure (high level)
+
+Some key files/folders:
+
+- **`src/main.jsx`**: entry point that sets up React, React Router, and `i18next`.
+- **`src/routes/`**: application routes configuration.
+- **`src/components/`**: reusable React components.
+- **`src/i18n.js`**: internationalization configuration.
+- **`src/index.css`**: global styles (including Tailwind CSS setup).
+
+You can now start modifying components and routes to customize the Furnis application.
