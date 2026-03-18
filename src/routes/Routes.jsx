@@ -21,9 +21,12 @@ const router = createBrowserRouter([
             {   path:"/living",         element:<Living></Living>                       },
             {   path:"/Office",         element:<Office></Office>                       },
             {   path:"/custom-order",   element:<CustomOrder></CustomOrder>             },
-            {   path:"/contact",        element:<Contact></Contact>                     },
-            {   path:"*",               element:<NotFound></NotFound>                   }
+            {   path:"/contact",        element:<Contact></Contact>                     }
         ]
+    },
+    {
+        path:"*",
+        element:<NotFound></NotFound>
     }
 ])
 export default router;
