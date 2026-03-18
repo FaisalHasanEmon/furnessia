@@ -1,5 +1,4 @@
 {
-  "welcome": "Welcome",
   "contact": "Contact Us",
   "shop": "Shop",
   "home": "Home",
@@ -7,5 +6,20 @@
   "bedroom": "Bedroom",
   "living": "Living",
   "office": "Office",
-  "customOrder": "Custom Order"
+  "customOrder": "Custom Order",
+  "wayToShop": "Way To Shop",
+  "shopByCategory": "Shop by Category",
+  "outdoor": "Outdoor",
+  "company": "Company",
+  "aboutUs": "About Us",
+  "ourCommitment": "Our Commitment",
+  "qualityWarranty": "Quality & Warranty",
+  "blog": "Blog",
+  "clientSupport": "Client Support",
+  "trackYourOrder": "Track Your Order",
+  "returnsReplacements": "Returns & Replacements",
+  "faq": "FAQ",
+  "privacyPolicy": "Privacy Policy",
+  "termsConditions": "Terms & Conditions",
+  "furnessiaDescription": "Furnessia brings premium furniture to modern Bangladeshi homes. From timeless indoor collections to durable outdoor pieces, we combine quality craftsmanship, thoughtful design, and reliable delivery to elevate your everyday living."
 }

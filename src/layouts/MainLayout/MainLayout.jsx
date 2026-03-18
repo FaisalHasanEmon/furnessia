@@ -8,16 +8,16 @@ import { useTranslation } from "react-i18next";
 
 
 function HomeLayout() {
-  const {t}= useTranslation();
+  const { t } = useTranslation();
 
   return (
-  <main>
-    <Navbar></Navbar>
-    <h1>{t("welcome")}</h1>
-    <LanguageSwitcher></LanguageSwitcher>
-    <Outlet></Outlet>
-    <Footer></Footer>
-  </main>
+    <main>
+      <Navbar></Navbar>
+      <div className="min-h-[calc(100vh-646px)]">
+        <Outlet></Outlet>
+      </div>
+      <Footer></Footer>
+    </main>
   )
 }
 

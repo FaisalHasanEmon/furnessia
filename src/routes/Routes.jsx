@@ -8,6 +8,7 @@ import Living from "../pages/Living/Living";
 import CustomOrder from "../pages/CustomOrder/CustomOrder";
 import Contact from "../pages/Contact/Contact";
 import Office from "../pages/Office/Office";
+import NotFound from "../pages/NotFound/NotFound";
 const router = createBrowserRouter([
     {
         path:"/",
@@ -20,7 +21,8 @@ const router = createBrowserRouter([
             {   path:"/living",         element:<Living></Living>                       },
             {   path:"/Office",         element:<Office></Office>                       },
             {   path:"/custom-order",   element:<CustomOrder></CustomOrder>             },
-            {   path:"/contact",        element:<Contact></Contact>                     }
+            {   path:"/contact",        element:<Contact></Contact>                     },
+            {   path:"*",               element:<NotFound></NotFound>                   }
         ]
     }
 ])
