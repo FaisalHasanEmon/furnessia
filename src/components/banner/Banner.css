@@ -1,0 +1,14 @@
+/* Hide default swiper pagination — we use custom dashes */
+.heroSwiper .swiper-pagination {
+    display: none !important;
+}
+
+/* Hide scrollbar for feature bar */
+.scrollbar-none::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollbar-none {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
