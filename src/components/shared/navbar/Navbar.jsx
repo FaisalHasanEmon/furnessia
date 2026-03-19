@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search, ShoppingCart, Bell, User, Menu, X, ChevronDown } from "lucide-react";
 // Update this import path to match your actual logo file
-import logo from "@/assets/logo/logo.png";
+import logo from "/assets/logo/logo.png";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router";
 
