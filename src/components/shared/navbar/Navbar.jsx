@@ -31,11 +31,11 @@ export default function Navbar() {
     <>
       {/* Desktop & Tablet Navbar */}
       <nav className="w-full bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50 font-inter">
-        <div className="max-w-[1920px] mx-auto px-4 sm:px-6 lg:px-20">
-          <div className="flex items-center justify-between h-[60px]">
+        <div className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20">
+          <div className="flex items-center justify-between h-15">
 
             {/* Logo */}
-            <div className="flex-shrink-0">
+            <div className="shrink-0">
               <Link to="/" className="flex items-center">
                 <img
                   src={logo}
@@ -77,7 +77,7 @@ export default function Navbar() {
                     {t(link?.key)}
                     {/* Active underline */}
                     {isActive && (
-                      <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gray-800 rounded-full" />
+                      <span className="absolute bottom-0 left-0 w-full h-0.5 bg-gray-800 rounded-full" />
                     )}
                   </Link>
                 );

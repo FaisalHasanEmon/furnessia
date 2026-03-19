@@ -1,6 +1,6 @@
-## Furnis
+## Furnessia
 
-Furnis is a React single-page application built with Vite, React Router, Tailwind CSS and `i18next` for internationalization.
+Furnessia is a React single-page application built with Vite, React Router, Tailwind CSS and `i18next` for internationalization.
 
 This guide explains how to **clone**, **set up**, and **run** the project on your machine.
 
