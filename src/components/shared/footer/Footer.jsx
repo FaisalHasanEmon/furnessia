@@ -1,10 +1,10 @@
-import twitter from "/src/assets/footer-image/twitter.png"
-import linkedin from "/src/assets/footer-image/linkedin.png"
-import facebook from "/src/assets/footer-image/facebook.png"
+import twitter from "@/assets/footer-image/twitter.png"
+import linkedin from "@/assets/footer-image/linkedin.png"
+import facebook from "@/assets/footer-image/facebook.png"
 import { Link } from 'react-router';
 import { useTranslation } from 'react-i18next';
-import logo from '/src/assets/logo/logo-footer.png';
-import footerTitle from '/src/assets/footer-image/title.png';
+import logo from '@/assets/logo/logo-footer.png';
+import footerTitle from '@/assets/footer-image/title.png';
 
 const Footer = () => {
   const { t } = useTranslation();
