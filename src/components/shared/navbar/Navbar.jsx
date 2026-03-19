@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Search, ShoppingCart, Bell, User, Menu, X, ChevronDown } from "lucide-react";
 // Update this import path to match your actual logo file
-import logo from "../../../assets/logo/logo.png";
+import logo from "/src/assets/logo/logo.png";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router";
 
@@ -66,15 +66,15 @@ export default function Navbar() {
                 const isActive = location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/');
                 return (
                   <Link
-                    key={link.label}
-                    to={link.href}
+                    key={link?.label}
+                    to={link?.href}
                     className={`relative px-3 py-2 text-sm font-medium transition-colors duration-150 whitespace-nowrap
                       ${isActive
                         ? "text-gray-900"
                         : "text-gray-500 hover:text-gray-800"
                       }`}
                   >
-                    {t(link.key)}
+                    {t(link?.key)}
                     {/* Active underline */}
                     {isActive && (
                       <span className="absolute bottom-0 left-0 w-full h-[2px] bg-gray-800 rounded-full" />
