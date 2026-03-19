@@ -179,7 +179,7 @@ export default function Banner() {
             </div>
 
             {/* ── Feature Bar ── */}
-            <div className="mt-4 sm:mt-5 overflow-x-auto scrollbar-none">
+            <div className="mt-4 py-0.5 sm:mt-5 overflow-x-auto scrollbar-none">
                 {/* <div className="flex items-center min-w-max sm:min-w-0 sm:flex-wrap sm:justify-center lg:grid lg:grid-cols-6 gap-0 border border-gray-100 rounded-2xl divide-x divide-gray-100 shadow-sm bg-white"> */}
                 <div className="flex items-center min-w-max sm:min-w-0 sm:flex-wrap sm:justify-center  gap-5   rounded-2xl divide-x divide-gray-100 ">
                     {features.map((f) => (
