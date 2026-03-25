@@ -9,7 +9,7 @@ const FurnessiaVideo = () => {
         <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 lg:py-[96px] py-8 sm:py-12 ">
             <div className="h-full w-full  space-y-12">
                 <div className="flex w-full justify-between items-baseline uppercase">
-                    <h2 className="font-familjen text-5xl md:text-[96px] lg:text-[150px] font-bold text-[#030712]">
+                    <h2 className="font-familjen text-4xl md:text-[96px] lg:text-[150px] font-bold text-[#030712]">
                         Furnessia
                     </h2>
                     <p className="text-xl md:text-3xl lg:text-6xl font-albert font-semibold lg:font-medium text-[#4A5565] uppercase">
@@ -17,7 +17,7 @@ const FurnessiaVideo = () => {
                     </p>
                 </div>
 
-                <div className="flex-1 aspect-video overflow-hidden max-w-full mx-auto rounded-[48px] relative  cursor-pointer">
+                <div className="flex-1 aspect-video min-h-[360px] overflow-hidden max-w-full mx-auto rounded-[48px] relative  cursor-pointer">
 
                     {!playVideo ? (
                         <div
@@ -33,7 +33,7 @@ const FurnessiaVideo = () => {
                             {/* Play Button */}
                             <div className="absolute inset-0 flex items-center justify-center">
                                 <figure>
-                                    <img src={play_button} alt="Play button" className="h-[52px] w-[52px] md:h-[100px] md:w-[100px] lg:h-[180px] lg:w-[180px]" />
+                                    <img src={play_button} alt="Play button" className="h-[60px] w-[60px] md:h-[100px] md:w-[100px] lg:h-[180px] lg:w-[180px]" />
                                 </figure>
 
                             </div>
