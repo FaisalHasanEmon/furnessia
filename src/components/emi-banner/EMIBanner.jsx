@@ -121,7 +121,7 @@ const EMIBanner = () => {
                         <button className="font-albert text-base sm:text-lg font-medium leading-6 text-white bg-[#F8361A] hover:bg-[#ff3407] px-5 sm:px-8 py-3.5 sm:py-4 rounded-full flex justify-center items-center gap-2">
                             Apply 0% EMI <ArrowRight size={20} />
                         </button>
-                        <button className="font-albert text-base sm:text-lg font-medium leading-6 text-[white] bg-[#1E2939] hover:bg-[#2d3748] px-7 sm:px-8 py-3.5 sm:py-4 rounded-full flex justify-center items-center gap-2">
+                        <button className="font-albert text-base sm:text-lg font-medium leading-6 text-[white] bg-[#1E2939] hover:bg-[#2d3748] px-5 sm:px-8 py-3.5 sm:py-4 rounded-full flex justify-center items-center gap-2">
                             Learn More <ArrowRight size={20} />
                         </button>
                     </div>
