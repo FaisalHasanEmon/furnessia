@@ -106,7 +106,7 @@ export default function Banner() {
                 >
                     {slides.map((slide) => (
                         <SwiperSlide key={slide.id}>
-                            <div className="relative w-full aspect-video md:aspect-21/9 lg:aspect-[1872px] min-h-[417px] ">
+                            <div className="relative w-full  md:aspect-21/9 lg:aspect-[1872px] min-h-[417px] ">
                                 {/* Background image */}
                                 <img
                                     src={slide.image}
