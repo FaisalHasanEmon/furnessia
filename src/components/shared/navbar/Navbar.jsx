@@ -1,9 +1,12 @@
 import { useState } from "react";
 import { Search, ShoppingCart, Bell, User, Menu, X, ChevronDown } from "lucide-react";
-// Update this import path to match your actual logo file
+
 import logo from "/assets/logo/logo.png";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router";
+import LanguageSwitcher from "../languageSwticher/LanguageSwitcher";
+
+
 
 const navLinks = [
   { label: "Home", key: "home", href: "/" },
@@ -15,6 +18,7 @@ const navLinks = [
   { label: "Custom Order", key: "customOrder", href: "/custom-order" },
   { label: "Contact", key: "contact", href: "/contact" },
 ];
+
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -86,19 +90,7 @@ export default function Navbar() {
 
             {/* Right Side Actions */}
             <div className="hidden lg:flex items-center gap-3">
-              {/* Language Toggle */}
-              <button
-                onClick={toggleLanguage}
-                className="flex items-center gap-1 text-sm text-gray-600 hover:text-gray-900 transition-colors font-medium border-r border-gray-300 pr-3"
-              >
-                <span className={currentLang === "en" ? "text-gray-900 font-semibold" : "text-gray-400"}>
-                  ENG
-                </span>
-                <span className="text-gray-300">|</span>
-                <span className={currentLang === "bn" ? "text-gray-900 font-semibold" : "text-gray-400"}>
-                  বাংলা
-                </span>
-              </button>
+              <LanguageSwitcher />
 
               {/* Search */}
               <button className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
@@ -135,14 +127,10 @@ export default function Navbar() {
 
             {/* Mobile: Right side icons */}
             <div className="flex lg:hidden items-center gap-2">
+              <LanguageSwitcher />
               <button className="p-1.5 text-gray-500 hover:text-gray-900">
                 <Search size={18} strokeWidth={1.8} />
-              </button>
-              <button className="relative p-1.5 text-gray-500 hover:text-gray-900">
-                <ShoppingCart size={18} strokeWidth={1.8} />
-                <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full">
-                  2
-                </span>
+
               </button>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
