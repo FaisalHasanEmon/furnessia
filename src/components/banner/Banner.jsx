@@ -92,7 +92,7 @@ export default function Banner() {
     return (
         <section className="max-w-[1920px] mx-auto px-3 md:px-6 font-sans py-6">
             {/* ── Hero Swiper ── */}
-            <div className="relative w-full overflow-hidden rounded-2xl">
+            <div className="relative w-full overflow-hidden rounded-[48px]">
                 <Swiper
                     onSwiper={(swiper) => (swiperRef.current = swiper)}
                     onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}

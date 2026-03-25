@@ -1,0 +1,61 @@
+/* ── Bank Logo Marquee ── */
+
+.marquee-wrapper {
+    overflow: hidden;
+    width: 100%;
+    min-width: 0;
+    /* prevents flex children from overflowing */
+    cursor: grab;
+    user-select: none;
+    touch-action: none;
+    /* allow JS to handle touch panning */
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+    mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+}
+
+.marquee-wrapper.dragging {
+    cursor: grabbing;
+}
+
+.marquee-track {
+    display: flex;
+    gap: 1.25rem;
+    width: max-content;
+    animation: marquee-scroll 20s linear infinite;
+    will-change: transform;
+}
+
+.marquee-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #ffffff;
+    border-radius: 0.5rem;
+    padding: 0.375rem 0.75rem;
+    flex-shrink: 0;
+}
+
+.marquee-item img {
+    height: 2.5rem;
+    width: auto;
+    object-fit: contain;
+    pointer-events: none;
+    /* prevent ghost image drag */
+    user-select: none;
+}
+
+@media (max-width: 768px) {
+    .marquee-item img {
+        height: 1.5rem;
+    }
+}
+
+@keyframes marquee-scroll {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
