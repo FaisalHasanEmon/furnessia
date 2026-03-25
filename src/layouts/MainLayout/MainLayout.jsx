@@ -5,6 +5,7 @@ import Footer from "../../components/shared/footer/Footer"
 
 import LanguageSwitcher from "../../components/shared/languageSwticher/LanguageSwitcher";
 import { useTranslation } from "react-i18next";
+import MobileNavbar from "../../components/shared/mobile-navbar/MobileNavbar";
 
 
 function HomeLayout() {
@@ -13,6 +14,7 @@ function HomeLayout() {
   return (
     <main>
       <Navbar></Navbar>
+      <MobileNavbar></MobileNavbar>
       <div className="min-h-[calc(100vh-646px)]">
         <Outlet></Outlet>
       </div>
