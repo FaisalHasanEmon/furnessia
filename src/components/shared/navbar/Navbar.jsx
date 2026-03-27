@@ -66,7 +66,7 @@ export default function Navbar() {
             </div>
 
             {/* Center Nav Links - Always visible */}
-            <div className="hidden lg:flex items-center gap-1">
+            <div className="hidden xl:flex items-center gap-1">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/');
                 return (

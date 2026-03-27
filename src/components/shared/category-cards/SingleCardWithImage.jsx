@@ -1,7 +1,7 @@
 const SingleCardWithImage = ({ item = {} }) => {
     return (
-        <div className="flex flex-col items-center gap-3 cursor-pointer group/item">
-            <div className="relative aspect-square w-full bg-gray-100 rounded-2xl overflow-hidden transition-transform duration-300 group-hover/item:scale-[1.02]">
+        <div className="w-full flex flex-col gap-3 cursor-pointer group/item">
+            <div className="relative aspect-3/4 w-full bg-gray-100 rounded-2xl overflow-hidden transition-transform duration-300 group-hover/item:scale-[1.02]">
                 <img
                     src={item.image}
                     alt={item.title}
@@ -24,7 +24,7 @@ const SingleCardWithImage = ({ item = {} }) => {
                     </div>
                 )}
             </div>
-            <h3 className="text-sm font-medium text-gray-600 transition-colors group-hover/item:text-gray-900">
+            <h3 className="text-sm font-medium text-gray-600 transition-colors group-hover/item:text-gray-900 w-full text-left">
                 {item.title}
             </h3>
         </div>

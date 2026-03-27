@@ -14,7 +14,7 @@ import CategoryCardWithSingleImage from '../category-cards/SingleCardWithImage';
  */
 const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
   return (
-    <div className="relative group">
+    <div className="relative group border px-20">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={16}
@@ -41,7 +41,7 @@ const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
           },
           // when window width is >= 1536px
           1536: {
-            slidesPerView: 10.5,
+            slidesPerView: cardType === "singleCard" ? 10 : 8.5,
             spaceBetween: 24
           }
         }}
@@ -57,10 +57,10 @@ const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
       </Swiper>
 
       {/* Custom Navigation Buttons */}
-      <button className="swiper-button-prev-custom absolute left-4 sm:left-6 lg:left-20 top-[40%] -translate-y-1/2 z-10 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 swiper-button-disabled:opacity-20 hover:bg-black">
+      <button className="swiper-button-prev-custom absolute left-4 sm:left-6 lg:left-15 top-[42.5%] -translate-y-1/2 z-10 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 swiper-button-disabled:opacity-20 hover:bg-black">
         <ChevronLeft size={20} />
       </button>
-      <button className="swiper-button-next-custom absolute right-4 sm:right-6 lg:right-20 top-[40%] -translate-y-1/2 z-10 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 swiper-button-disabled:opacity-20 hover:bg-black">
+      <button className="swiper-button-next-custom absolute right-4 sm:right-6 lg:right-15 top-[42.5%] -translate-y-1/2 z-10 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 swiper-button-disabled:opacity-20 hover:bg-black">
         <ChevronRight size={20} />
       </button>
     </div>
