@@ -1,3 +1,4 @@
+import { ArrowRightIcon } from "../shared/icons/Icons"
 import cta_bg from "/assets/cta/cta_bg.png"
 
 const Cta = () => {
@@ -12,27 +13,13 @@ const Cta = () => {
                     <div className="flex justify-center">
                         <button
                             type="button"
-                            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 md:px-12 lg:px-[71px] py-3 md:py-4 bg-[#1E2939] text-white rounded-full hover:bg-[#2d3748] active:scale-95 transition-all duration-300"
+                            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 md:px-12 lg:px-[71px] py-3 md:py-4 bg-[#1E2939] text-white rounded-full hover:bg-[#2d3748] active:scale-95 transition-all duration-300 group"
                         >
                             <span className="text-sm sm:text-base md:text-lg">
                                 Shop Now
                             </span>
 
-                            <svg
-                                className="transition-transform duration-300 group-hover:translate-x-1"
-                                width="14"
-                                height="9"
-                                viewBox="0 0 14 9"
-                                fill="none"
-                                xmlns="http://www.w3.org/2000/svg"
-                            >
-                                <path
-                                    fillRule="evenodd"
-                                    clipRule="evenodd"
-                                    d="M8.57741 0.244078C8.90285 -0.0813592 9.43048 -0.0813593 9.75592 0.244078L13.0893 3.57741C13.2455 3.73369 13.3333 3.94565 13.3333 4.16667C13.3333 4.38768 13.2455 4.59964 13.0893 4.75592L9.75592 8.08926C9.43049 8.41469 8.90285 8.41469 8.57741 8.08926C8.25197 7.76382 8.25197 7.23618 8.57741 6.91074L10.4882 5H0.833333C0.373096 5 0 4.6269 0 4.16667C0 3.70643 0.373096 3.33333 0.833333 3.33333H10.4882L8.57741 1.42259C8.25197 1.09715 8.25197 0.569515 8.57741 0.244078Z"
-                                    fill="white"
-                                />
-                            </svg>
+                            <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" size={14} />
                         </button>
                     </div>
                 </div>

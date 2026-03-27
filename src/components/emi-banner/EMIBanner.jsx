@@ -1,3 +1,4 @@
+import { CardIcon, WalletIcon, BuildingIcon, ClockIcon } from "../shared/icons/Icons";
 import bank_asia from "/assets/emi/bank_asia.png"
 import city_bank from "/assets/emi/city_bank.png"
 import ismlami_bank from "/assets/emi/islami_bank.png"
@@ -170,17 +171,8 @@ const EMIBanner = () => {
                     {/*Row-1 Column-1 */}
                     <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#44403C] to-[#1C1917]">
                         <div className="flex flex-col  gap-4">
-                            {/* Image */}
                             <figure>
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="path-1-inside-1_226_34534" fill="white">
-                                        <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" />
-                                    </mask>
-                                    <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" fill="white" fill-opacity="0.15" />
-                                    <path d="M16 0V1H20V0V-1H16V0ZM36 16H35V20H36H37V16H36ZM20 36V35H16V36V37H20V36ZM0 20H1V16H0H-1V20H0ZM16 36V35C7.71573 35 1 28.2843 1 20H0H-1C-1 29.3888 6.61116 37 16 37V36ZM36 20H35C35 28.2843 28.2843 35 20 35V36V37C29.3888 37 37 29.3888 37 20H36ZM20 0V1C28.2843 1 35 7.71573 35 16H36H37C37 6.61116 29.3888 -1 20 -1V0ZM16 0V-1C6.61116 -1 -1 6.61116 -1 16H0H1C1 7.71573 7.71573 1 16 1V0Z" fill="white" fill-opacity="0.1" mask="url(#path-1-inside-1_226_34534)" />
-                                    <path d="M23.3335 13.333H12.6668C11.9304 13.333 11.3335 13.93 11.3335 14.6663V21.333C11.3335 22.0694 11.9304 22.6663 12.6668 22.6663H23.3335C24.0699 22.6663 24.6668 22.0694 24.6668 21.333V14.6663C24.6668 13.93 24.0699 13.333 23.3335 13.333Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M11.3335 16.667H24.6668" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
+                                <CardIcon size={36} />
                             </figure>
                             <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">Down Payment</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">30%</span> <span className="text-xs">of tatal price</span></p>
                         </div>
@@ -188,18 +180,8 @@ const EMIBanner = () => {
                     {/*Row-1 Column-2 */}
                     <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#FF6B4A] to-[#F93914] ">
                         <div className="flex flex-col  gap-4">
-                            {/* Image */}
                             <figure>
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="path-1-inside-1_226_34542" fill="white">
-                                        <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" />
-                                    </mask>
-                                    <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" fill="white" fill-opacity="0.15" />
-                                    <path d="M16 0V1H20V0V-1H16V0ZM36 16H35V20H36H37V16H36ZM20 36V35H16V36V37H20V36ZM0 20H1V16H0H-1V20H0ZM16 36V35C7.71573 35 1 28.2843 1 20H0H-1C-1 29.3888 6.61116 37 16 37V36ZM36 20H35C35 28.2843 28.2843 35 20 35V36V37C29.3888 37 37 29.3888 37 20H36ZM20 0V1C28.2843 1 35 7.71573 35 16H36H37C37 6.61116 29.3888 -1 20 -1V0ZM16 0V-1C6.61116 -1 -1 6.61116 -1 16H0H1C1 7.71573 7.71573 1 16 1V0Z" fill="white" fill-opacity="0.1" mask="url(#path-1-inside-1_226_34542)" />
-                                    <path d="M22.6667 14.6667V12.6667C22.6667 12.4899 22.5964 12.3203 22.4714 12.1953C22.3464 12.0702 22.1768 12 22 12H13.3333C12.9797 12 12.6406 12.1405 12.3905 12.3905C12.1405 12.6406 12 12.9797 12 13.3333C12 13.687 12.1405 14.0261 12.3905 14.2761C12.6406 14.5262 12.9797 14.6667 13.3333 14.6667H23.3333C23.5101 14.6667 23.6797 14.7369 23.8047 14.8619C23.9298 14.987 24 15.1565 24 15.3333V18M24 18H22C21.6464 18 21.3072 18.1405 21.0572 18.3905C20.8071 18.6406 20.6667 18.9797 20.6667 19.3333C20.6667 19.687 20.8071 20.0261 21.0572 20.2761C21.3072 20.5262 21.6464 20.6667 22 20.6667H24C24.1768 20.6667 24.3464 20.5964 24.4714 20.4714C24.5964 20.3464 24.6667 20.1768 24.6667 20V18.6667C24.6667 18.4899 24.5964 18.3203 24.4714 18.1953C24.3464 18.0702 24.1768 18 24 18Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M12 13.333V22.6663C12 23.02 12.1405 23.3591 12.3905 23.6092C12.6406 23.8592 12.9797 23.9997 13.3333 23.9997H23.3333C23.5101 23.9997 23.6797 23.9294 23.8047 23.8044C23.9298 23.6794 24 23.5098 24 23.333V20.6663" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
+                                <WalletIcon size={36} />
                             </figure>
                             <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">cash emi</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">৳999</span> <span className="text-xs">/month minimum</span></p>
                         </div>
@@ -220,22 +202,8 @@ const EMIBanner = () => {
                     {/*Row-2 Column-3 */}
                     <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#44403C] to-[#1C1917]">
                         <div className="flex flex-col  gap-4">
-                            {/* Image */}
                             <figure>
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="path-1-inside-1_226_34555" fill="white">
-                                        <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" />
-                                    </mask>
-                                    <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" fill="white" fill-opacity="0.15" />
-                                    <path d="M16 0V1H20V0V-1H16V0ZM36 16H35V20H36H37V16H36ZM20 36V35H16V36V37H20V36ZM0 20H1V16H0H-1V20H0ZM16 36V35C7.71573 35 1 28.2843 1 20H0H-1C-1 29.3888 6.61116 37 16 37V36ZM36 20H35C35 28.2843 28.2843 35 20 35V36V37C29.3888 37 37 29.3888 37 20H36ZM20 0V1C28.2843 1 35 7.71573 35 16H36H37C37 6.61116 29.3888 -1 20 -1V0ZM16 0V-1C6.61116 -1 -1 6.61116 -1 16H0H1C1 7.71573 7.71573 1 16 1V0Z" fill="white" fill-opacity="0.1" mask="url(#path-1-inside-1_226_34555)" />
-                                    <path d="M14 24.6663V12.6663C14 12.3127 14.1405 11.9736 14.3905 11.7235C14.6406 11.4735 14.9797 11.333 15.3333 11.333H20.6667C21.0203 11.333 21.3594 11.4735 21.6095 11.7235C21.8595 11.9736 22 12.3127 22 12.6663V24.6663H14Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M14.0002 18H12.6668C12.3132 18 11.9741 18.1405 11.724 18.3905C11.474 18.6406 11.3335 18.9797 11.3335 19.3333V23.3333C11.3335 23.687 11.474 24.0261 11.724 24.2761C11.9741 24.5262 12.3132 24.6667 12.6668 24.6667H14.0002" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M22 16H23.3333C23.687 16 24.0261 16.1405 24.2761 16.3905C24.5262 16.6406 24.6667 16.9797 24.6667 17.3333V23.3333C24.6667 23.687 24.5262 24.0261 24.2761 24.2761C24.0261 24.5262 23.687 24.6667 23.3333 24.6667H22" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.6665 14H19.3332" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.6665 16.667H19.3332" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.6665 19.333H19.3332" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.6665 22H19.3332" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
+                                <BuildingIcon size={36} />
                             </figure>
                             <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">bank partner</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">12+</span> <span className="text-xs">BRAC, City, EBL...</span></p>
                         </div>
@@ -243,26 +211,8 @@ const EMIBanner = () => {
                     {/*Row-2 Column-4 */}
                     <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#FF6B4A] to-[#F93914]">
                         <div className="flex flex-col  gap-4">
-                            {/* Image */}
                             <figure>
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="path-1-inside-1_226_34568" fill="white">
-                                        <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" />
-                                    </mask>
-                                    <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" fill="white" fill-opacity="0.15" />
-                                    <path d="M16 0V1H20V0V-1H16V0ZM36 16H35V20H36H37V16H36ZM20 36V35H16V36V37H20V36ZM0 20H1V16H0H-1V20H0ZM16 36V35C7.71573 35 1 28.2843 1 20H0H-1C-1 29.3888 6.61116 37 16 37V36ZM36 20H35C35 28.2843 28.2843 35 20 35V36V37C29.3888 37 37 29.3888 37 20H36ZM20 0V1C28.2843 1 35 7.71573 35 16H36H37C37 6.61116 29.3888 -1 20 -1V0ZM16 0V-1C6.61116 -1 -1 6.61116 -1 16H0H1C1 7.71573 7.71573 1 16 1V0Z" fill="white" fill-opacity="0.1" mask="url(#path-1-inside-1_226_34568)" />
-                                    <g clip-path="url(#clip0_226_34568)">
-                                        <path d="M18.0002 24.6663C21.6821 24.6663 24.6668 21.6816 24.6668 17.9997C24.6668 14.3178 21.6821 11.333 18.0002 11.333C14.3183 11.333 11.3335 14.3178 11.3335 17.9997C11.3335 21.6816 14.3183 24.6663 18.0002 24.6663Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                        <path d="M18 14V18L20.6667 19.3333" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    </g>
-                                    <defs>
-                                        <clipPath id="clip0_226_34568">
-                                            <rect width="16" height="16" fill="white" transform="translate(10 10)" />
-                                        </clipPath>
-                                    </defs>
-                                </svg>
-
-
+                                <ClockIcon size={36} />
                             </figure>
                             <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">duration</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">3-24</span> <span className="text-xs">months available</span></p>
                         </div>
@@ -272,95 +222,45 @@ const EMIBanner = () => {
                 {/* right side - mobile devices */}
                 <div className="col-span-1 md:hidden grid grid-cols-2  gap-3 *:rounded-2xl *:min-h-[204px]">
                     <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#44403C] to-[#1C1917]">
-                        <div className="flex flex-col  gap-4">
-                            {/* Image */}
+                        <div className="flex flex-col gap-4">
                             <figure>
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="path-1-inside-1_226_34534" fill="white">
-                                        <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" />
-                                    </mask>
-                                    <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" fill="white" fill-opacity="0.15" />
-                                    <path d="M16 0V1H20V0V-1H16V0ZM36 16H35V20H36H37V16H36ZM20 36V35H16V36V37H20V36ZM0 20H1V16H0H-1V20H0ZM16 36V35C7.71573 35 1 28.2843 1 20H0H-1C-1 29.3888 6.61116 37 16 37V36ZM36 20H35C35 28.2843 28.2843 35 20 35V36V37C29.3888 37 37 29.3888 37 20H36ZM20 0V1C28.2843 1 35 7.71573 35 16H36H37C37 6.61116 29.3888 -1 20 -1V0ZM16 0V-1C6.61116 -1 -1 6.61116 -1 16H0H1C1 7.71573 7.71573 1 16 1V0Z" fill="white" fill-opacity="0.1" mask="url(#path-1-inside-1_226_34534)" />
-                                    <path d="M23.3335 13.333H12.6668C11.9304 13.333 11.3335 13.93 11.3335 14.6663V21.333C11.3335 22.0694 11.9304 22.6663 12.6668 22.6663H23.3335C24.0699 22.6663 24.6668 22.0694 24.6668 21.333V14.6663C24.6668 13.93 24.0699 13.333 23.3335 13.333Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M11.3335 16.667H24.6668" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
+                                <CardIcon size={36} />
                             </figure>
                             <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">Down Payment</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">30%</span> <span className="text-xs">of tatal price</span></p>
                         </div>
                     </div>
                     <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#FF6B4A] to-[#F93914]">
-                        <div className="flex flex-col  gap-4">
-                            {/* Image */}
+                        <div className="flex flex-col gap-4">
                             <figure>
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="path-1-inside-1_226_34542" fill="white">
-                                        <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" />
-                                    </mask>
-                                    <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" fill="white" fill-opacity="0.15" />
-                                    <path d="M16 0V1H20V0V-1H16V0ZM36 16H35V20H36H37V16H36ZM20 36V35H16V36V37H20V36ZM0 20H1V16H0H-1V20H0ZM16 36V35C7.71573 35 1 28.2843 1 20H0H-1C-1 29.3888 6.61116 37 16 37V36ZM36 20H35C35 28.2843 28.2843 35 20 35V36V37C29.3888 37 37 29.3888 37 20H36ZM20 0V1C28.2843 1 35 7.71573 35 16H36H37C37 6.61116 29.3888 -1 20 -1V0ZM16 0V-1C6.61116 -1 -1 6.61116 -1 16H0H1C1 7.71573 7.71573 1 16 1V0Z" fill="white" fill-opacity="0.1" mask="url(#path-1-inside-1_226_34542)" />
-                                    <path d="M22.6667 14.6667V12.6667C22.6667 12.4899 22.5964 12.3203 22.4714 12.1953C22.3464 12.0702 22.1768 12 22 12H13.3333C12.9797 12 12.6406 12.1405 12.3905 12.3905C12.1405 12.6406 12 12.9797 12 13.3333C12 13.687 12.1405 14.0261 12.3905 14.2761C12.6406 14.5262 12.9797 14.6667 13.3333 14.6667H23.3333C23.5101 14.6667 23.6797 14.7369 23.8047 14.8619C23.9298 14.987 24 15.1565 24 15.3333V18M24 18H22C21.6464 18 21.3072 18.1405 21.0572 18.3905C20.8071 18.6406 20.6667 18.9797 20.6667 19.3333C20.6667 19.687 20.8071 20.0261 21.0572 20.2761C21.3072 20.5262 21.6464 20.6667 22 20.6667H24C24.1768 20.6667 24.3464 20.5964 24.4714 20.4714C24.5964 20.3464 24.6667 20.1768 24.6667 20V18.6667C24.6667 18.4899 24.5964 18.3203 24.4714 18.1953C24.3464 18.0702 24.1768 18 24 18Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M12 13.333V22.6663C12 23.02 12.1405 23.3591 12.3905 23.6092C12.6406 23.8592 12.9797 23.9997 13.3333 23.9997H23.3333C23.5101 23.9997 23.6797 23.9294 23.8047 23.8044C23.9298 23.6794 24 23.5098 24 23.333V20.6663" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
-
+                                <WalletIcon size={36} />
                             </figure>
                             <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">cash emi</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">৳999</span> <span className="text-xs">/month minimum</span></p>
                         </div>
                     </div>
-                    <div className="col-span-2 row-span-1  overflow-clip"><img src={furniture_1} alt="Bed" className="w-full h-full object-cover" /></div>
+                    <div className="col-span-2 row-span-1 overflow-clip"><img src={furniture_1} alt="Bed" className="w-full h-full object-cover" /></div>
                     <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#44403C] to-[#1C1917]">
-                        <div className="flex flex-col  gap-4">
-                            {/* Image */}
+                        <div className="flex flex-col gap-4">
                             <figure>
-                                <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <mask id="path-1-inside-1_226_34555" fill="white">
-                                        <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" />
-                                    </mask>
-                                    <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" fill="white" fill-opacity="0.15" />
-                                    <path d="M16 0V1H20V0V-1H16V0ZM36 16H35V20H36H37V16H36ZM20 36V35H16V36V37H20V36ZM0 20H1V16H0H-1V20H0ZM16 36V35C7.71573 35 1 28.2843 1 20H0H-1C-1 29.3888 6.61116 37 16 37V36ZM36 20H35C35 28.2843 28.2843 35 20 35V36V37C29.3888 37 37 29.3888 37 20H36ZM20 0V1C28.2843 1 35 7.71573 35 16H36H37C37 6.61116 29.3888 -1 20 -1V0ZM16 0V-1C6.61116 -1 -1 6.61116 -1 16H0H1C1 7.71573 7.71573 1 16 1V0Z" fill="white" fill-opacity="0.1" mask="url(#path-1-inside-1_226_34555)" />
-                                    <path d="M14 24.6663V12.6663C14 12.3127 14.1405 11.9736 14.3905 11.7235C14.6406 11.4735 14.9797 11.333 15.3333 11.333H20.6667C21.0203 11.333 21.3594 11.4735 21.6095 11.7235C21.8595 11.9736 22 12.3127 22 12.6663V24.6663H14Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M14.0002 18H12.6668C12.3132 18 11.9741 18.1405 11.724 18.3905C11.474 18.6406 11.3335 18.9797 11.3335 19.3333V23.3333C11.3335 23.687 11.474 24.0261 11.724 24.2761C11.9741 24.5262 12.3132 24.6667 12.6668 24.6667H14.0002" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M22 16H23.3333C23.687 16 24.0261 16.1405 24.2761 16.3905C24.5262 16.6406 24.6667 16.9797 24.6667 17.3333V23.3333C24.6667 23.687 24.5262 24.0261 24.2761 24.2761C24.0261 24.5262 23.687 24.6667 23.3333 24.6667H22" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.6665 14H19.3332" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.6665 16.667H19.3332" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.6665 19.333H19.3332" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M16.6665 22H19.3332" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                </svg>
+                                <BuildingIcon size={36} />
                             </figure>
                             <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">bank partner</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">12+</span> <span className="text-xs">BRAC, City, EBL...</span></p>
                         </div>
                     </div>
-                    <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#FF6B4A] to-[#F93914]"><div className="flex flex-col  gap-4">
-                        {/* Image */}
-                        <figure>
-                            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <mask id="path-1-inside-1_226_34568" fill="white">
-                                    <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" />
-                                </mask>
-                                <path d="M0 16C0 7.16344 7.16344 0 16 0H20C28.8366 0 36 7.16344 36 16V20C36 28.8366 28.8366 36 20 36H16C7.16344 36 0 28.8366 0 20V16Z" fill="white" fill-opacity="0.15" />
-                                <path d="M16 0V1H20V0V-1H16V0ZM36 16H35V20H36H37V16H36ZM20 36V35H16V36V37H20V36ZM0 20H1V16H0H-1V20H0ZM16 36V35C7.71573 35 1 28.2843 1 20H0H-1C-1 29.3888 6.61116 37 16 37V36ZM36 20H35C35 28.2843 28.2843 35 20 35V36V37C29.3888 37 37 29.3888 37 20H36ZM20 0V1C28.2843 1 35 7.71573 35 16H36H37C37 6.61116 29.3888 -1 20 -1V0ZM16 0V-1C6.61116 -1 -1 6.61116 -1 16H0H1C1 7.71573 7.71573 1 16 1V0Z" fill="white" fill-opacity="0.1" mask="url(#path-1-inside-1_226_34568)" />
-                                <g clip-path="url(#clip0_226_34568)">
-                                    <path d="M18.0002 24.6663C21.6821 24.6663 24.6668 21.6816 24.6668 17.9997C24.6668 14.3178 21.6821 11.333 18.0002 11.333C14.3183 11.333 11.3335 14.3178 11.3335 17.9997C11.3335 21.6816 14.3183 24.6663 18.0002 24.6663Z" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                    <path d="M18 14V18L20.6667 19.3333" stroke="white" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
-                                </g>
-                                <defs>
-                                    <clipPath id="clip0_226_34568">
-                                        <rect width="16" height="16" fill="white" transform="translate(10 10)" />
-                                    </clipPath>
-                                </defs>
-                            </svg>
-
-
-                        </figure>
-                        <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">duration</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">3-24</span> <span className="text-xs">months available</span></p>
-                    </div>
+                    <div className="col-span-1 row-span-1 p-4 bg-linear-to-t from-[#FF6B4A] to-[#F93914]">
+                        <div className="flex flex-col gap-4">
+                            <figure>
+                                <ClockIcon size={36} />
+                            </figure>
+                            <p className="text-[#FFFFFF]/70 inline-block *:block text-[10px] space-y-6 leading-3.5 font-inter"><span className="uppercase font-bold ">duration</span> <span className="font-playfair text-[40px] text-[#FFFFFF]">3-24</span> <span className="text-xs">months available</span></p>
+                        </div>
                     </div>
                     <div className="col-span-2 row-span-1"><img src={furniture_3} alt="Red Sofa" className="w-full h-full object-cover" /></div>
                     <div className="col-span-2 row-span-1"><img src={furniture_2} alt="Sofa" className="w-full h-full object-cover" /></div>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 export default EMIBanner;
 
 

@@ -1,3 +1,4 @@
+import { ArrowRightLongIcon } from "../shared/icons/Icons";
 import { useRef, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination, EffectFade } from "swiper/modules";
@@ -134,11 +135,11 @@ export default function Banner() {
                                     <div className="flex flex-wrap items-center gap-3">
                                         <button className="flex items-center gap-2 bg-red-500 hover:bg-red-600 active:scale-95 text-white font-semibold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-200 shadow-lg shadow-red-500/30">
                                             Shop Now
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4"><path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                                            <ArrowRightLongIcon size={16} />
                                         </button>
                                         <button className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 active:scale-95 text-white font-semibold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/30 transition-all duration-200">
                                             Explore Collections
-                                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="w-4 h-4"><path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                                            <ArrowRightLongIcon size={16} />
                                         </button>
                                     </div>
                                 </div>

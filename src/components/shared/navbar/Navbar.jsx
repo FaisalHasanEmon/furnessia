@@ -34,7 +34,7 @@ export default function Navbar() {
   return (
     <>
       {/* Desktop & Tablet Navbar */}
-      <nav className="w-full bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50 font-inter">
+      <nav className="w-full bg-[#FAF8F3] sticky top-0 z-50 font-inter">
         <div className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20">
           <div className="flex items-center justify-between h-15">
 
