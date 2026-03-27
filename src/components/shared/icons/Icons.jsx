@@ -363,8 +363,8 @@ export const ClockIcon = ({ className = "", size = 36 }) => {
  */
 export const ArrowRightLongIcon = ({ className = "", size = 24 }) => {
   return (
-    <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className={className} xmlns="http://www.w3.org/2000/svg">
-      <path d="M5 12h14M12 5l7 7-7 7" strokeLinecap="round" strokeLinejoin="round" />
+    <svg width={size} height={size} className={className} viewBox="0 0 14 9" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path fillRule="evenodd" clipRule="evenodd" d="M8.57741 0.244078C8.90285 -0.0813592 9.43048 -0.0813593 9.75592 0.244078L13.0893 3.57741C13.2455 3.73369 13.3333 3.94565 13.3333 4.16667C13.3333 4.38768 13.2455 4.59964 13.0893 4.75592L9.75592 8.08926C9.43049 8.41469 8.90285 8.41469 8.57741 8.08926C8.25197 7.76382 8.25197 7.23618 8.57741 6.91074L10.4882 5H0.833333C0.373096 5 0 4.6269 0 4.16667C0 3.70643 0.373096 3.33333 0.833333 3.33333H10.4882L8.57741 1.42259C8.25197 1.09715 8.25197 0.569515 8.57741 0.244078Z" fill="currentColor" />
     </svg>
   );
 };

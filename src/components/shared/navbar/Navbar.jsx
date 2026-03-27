@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, ShoppingCart, Bell, User, Menu, X, ChevronDown } from "lucide-react";
+import { Search, ShoppingCart, Bell, User, Menu, X, ChevronDown, ChevronLeft } from "lucide-react";
 
 import logo from "/assets/logo/logo.png";
 import { useTranslation } from "react-i18next";
@@ -22,6 +22,7 @@ const navLinks = [
 
 export default function Navbar() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
 
@@ -64,7 +65,7 @@ export default function Navbar() {
               </Link>
             </div>
 
-            {/* Center Nav Links */}
+            {/* Center Nav Links - Always visible */}
             <div className="hidden lg:flex items-center gap-1">
               {navLinks.map((link) => {
                 const isActive = location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/');
@@ -89,55 +90,83 @@ export default function Navbar() {
             </div>
 
             {/* Right Side Actions */}
-            <div className="hidden lg:flex items-center gap-3">
-              <LanguageSwitcher />
+            <div className="flex items-center gap-2 sm:gap-3">
+              {isSearchOpen ? (
+                <div className="flex items-center gap-2 w-full sm:max-w-[280px] lg:max-w-[320px] animate-in fade-in slide-in-from-right-4 duration-300">
+                  <button
+                    onClick={() => setIsSearchOpen(false)}
+                    className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150 shrink-0"
+                  >
+                    <ChevronLeft size={18} strokeWidth={1.8} />
+                  </button>
+                  <div className="relative flex-1">
+                    <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={14} strokeWidth={1.8} />
+                    <input
+                      autoFocus
+                      type="text"
+                      placeholder="Search..."
+                      className="w-full bg-[#FAF8F3]/50 border border-gray-200 rounded-xl py-1.5 pl-9 pr-4 text-sm focus:outline-none focus:border-gray-300 focus:bg-white transition-all duration-200"
+                    />
+                  </div>
+                </div>
+              ) : (
+                <>
+                  <div className="hidden lg:flex items-center gap-3">
+                    <LanguageSwitcher />
 
-              {/* Search */}
-              <button className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
-                <Search size={18} strokeWidth={1.8} />
-              </button>
+                    {/* Search Trigger */}
+                    <button
+                      onClick={() => setIsSearchOpen(true)}
+                      className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150"
+                    >
+                      <Search size={18} strokeWidth={1.8} />
+                    </button>
 
-              {/* Cart */}
-              <button className="relative p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
-                <ShoppingCart size={18} strokeWidth={1.8} />
-                {/* Cart badge */}
-                <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full leading-none">
-                  2
-                </span>
-              </button>
+                    {/* Cart */}
+                    <button className="relative p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
+                      <ShoppingCart size={18} strokeWidth={1.8} />
+                      <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full leading-none">
+                        2
+                      </span>
+                    </button>
 
-              {/* Notification Bell */}
-              <button className="relative p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
-                <Bell size={18} strokeWidth={1.8} />
-              </button>
+                    {/* Notification Bell */}
+                    <button className="relative p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
+                      <Bell size={18} strokeWidth={1.8} />
+                    </button>
 
-              {/* User */}
-              <button className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
-                <User size={18} strokeWidth={1.8} />
-              </button>
+                    {/* User */}
+                    <button className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
+                      <User size={18} strokeWidth={1.8} />
+                    </button>
 
-              {/* Hamburger / Menu */}
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150"
-              >
-                <Menu size={18} strokeWidth={1.8} />
-              </button>
-            </div>
+                    {/* Hamburger / Menu */}
+                    <button
+                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150"
+                    >
+                      <Menu size={18} strokeWidth={1.8} />
+                    </button>
+                  </div>
 
-            {/* Mobile: Right side icons */}
-            <div className="flex lg:hidden items-center gap-2">
-              <LanguageSwitcher />
-              <button className="p-1.5 text-gray-500 hover:text-gray-900">
-                <Search size={18} strokeWidth={1.8} />
-
-              </button>
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="p-1.5 text-gray-500 hover:text-gray-900"
-              >
-                {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
-              </button>
+                  {/* Mobile: Search + Hamburger */}
+                  <div className="flex lg:hidden items-center gap-2">
+                    <LanguageSwitcher />
+                    <button
+                      onClick={() => setIsSearchOpen(true)}
+                      className="p-1.5 text-gray-500 hover:text-gray-900"
+                    >
+                      <Search size={18} strokeWidth={1.8} />
+                    </button>
+                    <button
+                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      className="p-1.5 text-gray-500 hover:text-gray-900"
+                    >
+                      {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                    </button>
+                  </div>
+                </>
+              )}
             </div>
           </div>
         </div>
