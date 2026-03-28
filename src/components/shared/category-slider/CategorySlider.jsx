@@ -14,7 +14,7 @@ import CategoryCardWithSingleImage from '../category-cards/SingleCardWithImage';
  */
 const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
   return (
-    <div className="relative group border px-20">
+    <div className="relative group  sm:px-5 lg:px-20">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={16}

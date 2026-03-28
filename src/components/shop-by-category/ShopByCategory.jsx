@@ -19,9 +19,9 @@ const categories = [
 
 const ShopByCategory = () => {
     return (
-        <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 py-12 lg:py-24">
+        <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-12 lg:py-24 space-y-4 ">
             <CategoryAndViewAll title="Shop by Category" navName="View All" navLink="/shop-by-category" />
-            <div className="mt-8 lg:mt-12 -mx-4 sm:-mx-6 lg:-mx-20">
+            <div className="lg:mt-12 -mx-4 sm:-mx-6 lg:-mx-20">
                 <CategorySlider items={categories} />
             </div>
         </section>

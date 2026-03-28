@@ -100,7 +100,7 @@ const EMIBanner = () => {
         resume();
     };
     return (
-        <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 py-8 sm:py-12 xl:py-[96px] bg-[#FAF8F3]">
+        <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 py-8 sm:py-12 xl:py-[96px] bg-[#FAF8F3] ">
             <div className="grid grid-cols-1 xl:grid-cols-12 gap-6 md:gap-10 lg:gap-8 xl:gap-0 min-h-[502px] ">
                 {/* left side */}
                 <div className="col-span-1 xl:col-span-5 flex flex-col justify-center items-stretch gap-6 sm:gap-8 lg:gap-14">

@@ -6,8 +6,8 @@ const FurnessiaVideo = () => {
     const [playVideo, setPlayVideo] = useState(false);
 
     return (
-        <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 lg:py-[96px] py-8 sm:py-12 ">
-            <div className="h-full w-full  space-y-8">
+        <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 lg:py-[96px] py-8 sm:py-12 bg-[#FAF8F3]">
+            <div className="h-full w-full  space-y-10">
                 <div className="flex w-full justify-between items-baseline uppercase">
                     <h2 className="font-familjen text-4xl md:text-[65px] lg:text-[65px] font-bold text-[#030712]">
                         Furnessia
