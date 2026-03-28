@@ -13,13 +13,13 @@ const Cta = () => {
                     <div className="flex justify-center">
                         <button
                             type="button"
-                            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 md:px-12 lg:px-[71px] py-3 md:py-4 bg-[#1E2939] text-white rounded-full hover:bg-[#2d3748] active:scale-95 transition-all duration-300 group"
+                            className="inline-flex items-center justify-center gap-2 px-6 sm:px-8 md:px-12 lg:px-[71px] py-3 md:py-4 bg-[#1E2939] text-white rounded-full hover:bg-[#2d3748] active:scale-95 transition-all duration-300 group/btn"
                         >
                             <span className="text-sm sm:text-base md:text-lg">
                                 Shop Now
                             </span>
 
-                            <ArrowRightIcon className="transition-transform duration-300 group-hover:translate-x-1" size={14} />
+                            <ArrowRightIcon className="transition-transform duration-300 group-hover/btn:translate-x-1" size={14} />
                         </button>
                     </div>
                 </div>

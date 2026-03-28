@@ -5,6 +5,7 @@ import logo from "/assets/logo/logo.png";
 import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router";
 import LanguageSwitcher from "../languageSwticher/LanguageSwitcher";
+import Sidebar from "../sidebar/Sidebar";
 
 
 
@@ -30,6 +31,13 @@ export default function Navbar() {
 
   const toggleLanguage = () => {
     i18n.changeLanguage(currentLang === "en" ? "bn" : "en");
+  };
+
+  // Mock user for Sidebar demonstration
+  const mockUser = {
+    name: "Abu Taher Molla",
+    email: "molla.ux@gmail.com",
+    avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&q=80"
   };
 
   return (
@@ -159,10 +167,10 @@ export default function Navbar() {
                       <Search size={18} strokeWidth={1.8} />
                     </button>
                     <button
-                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      onClick={() => setMobileMenuOpen(true)}
                       className="p-1.5 text-gray-500 hover:text-gray-900"
                     >
-                      {mobileMenuOpen ? <X size={20} /> : <Menu size={20} />}
+                      <Menu size={20} />
                     </button>
                   </div>
                 </>
@@ -171,50 +179,11 @@ export default function Navbar() {
           </div>
         </div>
 
-        {/* Mobile Menu Drawer */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden bg-white border-t border-gray-100 shadow-md">
-            <div className="max-w-7xl mx-auto px-4 py-3 flex flex-col gap-1">
-              {navLinks.map((link) => {
-                const isActive = location.pathname === link.href || (location.pathname.startsWith(link.href) && link.href !== '/');
-                return (
-                  <Link
-                    key={link.label}
-                    to={link.href}
-                    onClick={() => {
-                      setMobileMenuOpen(false);
-                    }}
-                    className={`px-3 py-2.5 text-sm font-medium rounded-md transition-colors
-                      ${isActive
-                        ? "bg-gray-100 text-gray-900 font-semibold"
-                        : "text-gray-600 hover:bg-gray-50 hover:text-gray-900"
-                      }`}
-                  >
-                    {t(link.key)}
-                  </Link>
-                );
-              })}
-
-              {/* Mobile Language + User actions */}
-              <div className="flex items-center gap-4 px-3 pt-3 pb-1 border-t border-gray-100 mt-2">
-                <button
-                  onClick={toggleLanguage}
-                  className="text-sm text-gray-600 font-medium flex items-center gap-1"
-                >
-                  <span className={currentLang === "en" ? "text-gray-900 font-semibold" : "text-gray-400"}>ENG</span>
-                  <span className="text-gray-300">|</span>
-                  <span className={currentLang === "bn" ? "text-gray-900 font-semibold" : "text-gray-400"}>বাংলা</span>
-                </button>
-                <button className="p-1.5 text-gray-500 hover:text-gray-900">
-                  <Bell size={18} strokeWidth={1.8} />
-                </button>
-                <button className="p-1.5 text-gray-500 hover:text-gray-900">
-                  <User size={18} strokeWidth={1.8} />
-                </button>
-              </div>
-            </div>
-          </div>
-        )}
+        <Sidebar
+          isOpen={mobileMenuOpen}
+          onClose={() => setMobileMenuOpen(false)}
+          user={mockUser}
+        />
       </nav>
     </>
   );

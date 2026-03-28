@@ -133,13 +133,13 @@ export default function Banner() {
                                         {slide.body}
                                     </p>
                                     <div className="flex flex-wrap items-center gap-3">
-                                        <button className="flex items-center gap-2 bg-red-500 hover:bg-red-600 active:scale-95 text-white font-semibold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-200 shadow-lg shadow-red-500/30">
+                                        <button className="flex items-center gap-2 bg-red-500 hover:bg-red-600 active:scale-95 text-white font-semibold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full transition-all duration-200 shadow-lg shadow-red-500/30 group/btn">
                                             Shop Now
-                                            <ArrowRightLongIcon size={16} />
+                                            <ArrowRightLongIcon size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
                                         </button>
-                                        <button className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 active:scale-95 text-white font-semibold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/30 transition-all duration-200">
+                                        <button className="flex items-center gap-2 bg-white/10 backdrop-blur-sm hover:bg-white/20 active:scale-95 text-white font-semibold text-sm sm:text-base px-5 sm:px-6 py-2.5 sm:py-3 rounded-full border border-white/30 transition-all duration-200 group/btn">
                                             Explore Collections
-                                            <ArrowRightLongIcon size={16} />
+                                            <ArrowRightLongIcon size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
                                         </button>
                                     </div>
                                 </div>
