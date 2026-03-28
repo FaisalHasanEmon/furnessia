@@ -21,8 +21,7 @@ const navLinks = [
 ];
 
 
-export default function Navbar() {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const { t, i18n } = useTranslation();
   const location = useLocation();
@@ -150,7 +149,7 @@ export default function Navbar() {
 
                     {/* Hamburger / Menu */}
                     <button
-                      onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                      onClick={() => setSidebarOpen(!isSidebarOpen)}
                       className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150"
                     >
                       <Menu size={18} strokeWidth={1.8} />
@@ -167,7 +166,7 @@ export default function Navbar() {
                       <Search size={18} strokeWidth={1.8} />
                     </button>
                     <button
-                      onClick={() => setMobileMenuOpen(true)}
+                      onClick={() => setSidebarOpen(true)}
                       className="p-1.5 text-gray-500 hover:text-gray-900"
                     >
                       <Menu size={20} />
@@ -180,8 +179,8 @@ export default function Navbar() {
         </div>
 
         <Sidebar
-          isOpen={mobileMenuOpen}
-          onClose={() => setMobileMenuOpen(false)}
+          isOpen={isSidebarOpen}
+          onClose={() => setSidebarOpen(false)}
           user={mockUser}
         />
       </nav>

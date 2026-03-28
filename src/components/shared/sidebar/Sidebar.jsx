@@ -3,8 +3,10 @@ import { X, ChevronDown, ChevronUp } from "lucide-react";
 import logo from "/assets/logo/logo.png";
 import { Link } from "react-router";
 import { MyProfileIcon, MyOrderIcon, NotificationIcon, LogoutIcon } from "../icons/Icons";
+import { useTranslation } from "react-i18next";
 
 const Sidebar = ({ isOpen, onClose, user = null }) => {
+    const { t } = useTranslation();
     const [expandedItems, setExpandedItems] = useState({});
 
     // Prevent background scrolling when sidebar is open
@@ -27,12 +29,12 @@ const Sidebar = ({ isOpen, onClose, user = null }) => {
     };
 
     const categories = [
-        { id: "living", label: "Living Room", hasSub: false },
-        { id: "bedroom", label: "Bedroom", hasSub: true, items: ["Single Bed", "Double Bed", "Suite"] },
-        { id: "dining", label: "Dining", hasSub: true, items: ["Dining Table", "Chairs", "Cabinets"] },
-        { id: "kitchen", label: "Kitchen", hasSub: true, items: ["Modern Kitchen", "Classic Kitchen"] },
-        { id: "door", label: "Door", hasSub: true, items: ["Door 1", "door 2"] },
-        { id: "store", label: "Store", hasSub: true, items: ["Visit Store", "Store Locator"] },
+        { id: "living", label: t("living"), hasSub: false },
+        { id: "bedroom", label: t("bedroom"), hasSub: true, items: ["Single Bed", "Double Bed", "Suite"] },
+        { id: "dining", label: t("dining"), hasSub: true, items: ["Dining Table", "Chairs", "Cabinets"] },
+        { id: "kitchen", label: t("kitchen"), hasSub: true, items: ["Modern Kitchen", "Classic Kitchen"] },
+        { id: "door", label: t("door"), hasSub: true, items: ["Door 1", "door 2"] },
+        { id: "store", label: t("store"), hasSub: true, items: ["Visit Store", "Store Locator"] },
     ];
 
     return (
@@ -84,19 +86,19 @@ const Sidebar = ({ isOpen, onClose, user = null }) => {
                             {/* User Action Links */}
                             <div className="space-y-1">
                                 <Link to="/profile" className="flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 text-gray-600 transition-colors">
-                                    <span className="text-sm font-medium">My Profile</span>
+                                    <span className="text-sm font-medium">{t("myProfile")}</span>
                                     <MyProfileIcon size={18} className="text-gray-400" />
                                 </Link>
                                 <Link to="/orders" className="flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 text-gray-600 transition-colors">
-                                    <span className="text-sm font-medium">My Orders</span>
+                                    <span className="text-sm font-medium">{t("myOrders")}</span>
                                     <MyOrderIcon size={18} className="text-gray-400" />
                                 </Link>
                                 <Link to="/notifications" className="flex items-center justify-between p-2.5 rounded-xl hover:bg-gray-50 text-gray-600 transition-colors">
-                                    <span className="text-sm font-medium">Notifications</span>
+                                    <span className="text-sm font-medium">{t("notifications")}</span>
                                     <NotificationIcon size={18} className="text-gray-400" />
                                 </Link>
                                 <button className="w-full flex items-center justify-between p-2.5 rounded-xl hover:bg-red-50 text-red-600 transition-colors group">
-                                    <span className="text-sm font-medium">Log Out</span>
+                                    <span className="text-sm font-medium">{t("logout")}</span>
                                     <LogoutIcon size={18} className="text-red-400 group-hover:text-red-600" />
                                 </button>
                             </div>
@@ -108,7 +110,7 @@ const Sidebar = ({ isOpen, onClose, user = null }) => {
                                 onClick={onClose}
                                 className="w-full h-11 bg-[#F93914] text-white font-semibold rounded-2xl flex items-center justify-center gap-2 hover:bg-red-600 transition-colors"
                             >
-                                Log in <span className="text-xl">→</span>
+                                {t("login")} <span className="text-xl">→</span>
                             </Link>
                         </div>
                     )}

@@ -42,10 +42,10 @@ const navLinks = [
     },
 ];
 
-const MobileNavbar = () => {
+const MobileNavbar = ({ isSidebarOpen }) => {
     const { t } = useTranslation();
     return (
-        <section className="fixed w-full bottom-0 left-0 z-50 md:hidden bg-white border-t border-gray-100 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)]">
+        <section className={`fixed w-full bottom-0 left-0 z-50 md:hidden bg-white border-t border-gray-100 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.05)] ${isSidebarOpen ? "hidden" : "block"}`}>
             <div className="w-full px-2 grid grid-cols-5 gap-0 h-16">
                 {navLinks.map((link) => {
                     const Icon = link?.icon;

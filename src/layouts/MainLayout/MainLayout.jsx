@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Outlet } from "react-router"
 import Navbar from "../../components/shared/navbar/Navbar"
 import Footer from "../../components/shared/footer/Footer"
@@ -10,11 +11,12 @@ import MobileNavbar from "../../components/shared/mobile-navbar/MobileNavbar";
 
 function HomeLayout() {
   const { t } = useTranslation();
+  const [isSidebarOpen, setSidebarOpen] = useState(false);
 
   return (
     <main>
-      <Navbar></Navbar>
-      <MobileNavbar></MobileNavbar>
+      <Navbar isSidebarOpen={isSidebarOpen} setSidebarOpen={setSidebarOpen}></Navbar>
+      <MobileNavbar isSidebarOpen={isSidebarOpen}></MobileNavbar>
       <div className="min-h-[calc(100vh-646px)]">
         <Outlet></Outlet>
       </div>
