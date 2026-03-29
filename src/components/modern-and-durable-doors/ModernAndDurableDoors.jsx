@@ -1,0 +1,104 @@
+
+import React, { useRef } from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper/modules';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
+import CategoryAndViewAll from "../shared/category-viewall/CategoryAndViewAll";
+import CategorySlider from '../shared/category-slider/CategorySlider';
+
+const doorProducts = [
+  {
+    id: 1,
+    image: "/assets/products/doors/door1.png",
+    category: "Living Room",
+    name: "Door 100",
+    rating: 4.8,
+    reviews: 124,
+    price: 45999,
+    oldPrice: 59999,
+    emi: 3999,
+    badges: [{ type: 'save', label: 'Save ৳2500' }, { type: 'emi', label: '0% EMI' }],
+  },
+  {
+    id: 2,
+    image: "/assets/products/doors/door2.png",
+    category: "Living Room",
+    name: "Door 100",
+    rating: 4.8,
+    reviews: 124,
+    price: 45999,
+    oldPrice: 59999,
+    emi: 3999,
+    badges: [{ type: 'save', label: 'Save ৳2500' }, { type: 'emi', label: '0% EMI' }],
+  },
+  {
+    id: 3,
+    image: "/assets/products/doors/door3.png",
+    category: "Living Room",
+    name: "Door 100",
+    rating: 4.8,
+    reviews: 124,
+    price: 45999,
+    oldPrice: 59999,
+    emi: 3999,
+    badges: [{ type: 'save', label: 'Save ৳2500' }, { type: 'seller', label: 'Best Seller' }],
+  },
+  {
+    id: 4,
+    image: "https://images.unsplash.com/photo-1549488344-cbb6c34ce08b?w=800&q=80",
+    category: "Living Room",
+    name: "Door 1001",
+    rating: 4.8,
+    reviews: 124,
+    price: 45999,
+    oldPrice: 59999,
+    emi: 3999,
+    badges: [{ type: 'save', label: 'Save ৳2500' }, { type: 'new', label: 'New' }],
+  },
+  {
+    id: 5,
+    image: "https://images.unsplash.com/photo-1517646281042-749510d7f5c0?w=800&q=80",
+    category: "Living Room",
+    name: "Door 100",
+    rating: 4.8,
+    reviews: 124,
+    price: 45999,
+    oldPrice: 59999,
+    emi: 3999,
+    badges: [{ type: 'save', label: 'Save ৳2500' }, { type: 'emi', label: '0% EMI' }],
+  },
+  {
+    id: 6,
+    image: "https://images.unsplash.com/photo-1615529151169-7b1ff50dc7bd?w=800&q=80",
+    category: "Living Room",
+    name: "Door 100",
+    rating: 4.8,
+    reviews: 124,
+    price: 45999,
+    oldPrice: 59999,
+    emi: 3999,
+    badges: [{ type: 'save', label: 'Save ৳2500' }, { type: 'emi', label: '0% EMI' }],
+  },
+];
+
+const ModernAndDurableDoors = () => {
+  const swiperRef = useRef(null);
+
+  return (
+
+    <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-12 lg:py-24 space-y-4 ">
+      <CategoryAndViewAll
+        title="Modern & Durable Doors"
+        navName="View all"
+        navLink="/modern-and-durable-doors"
+      />
+      <div className="lg:mt-12 -mx-4 sm:-mx-6 lg:-mx-20 ">
+        <CategorySlider items={doorProducts} cardType="featuredProductCards" />
+      </div>
+    </section>
+
+  );
+};
+
+
+export default ModernAndDurableDoors;

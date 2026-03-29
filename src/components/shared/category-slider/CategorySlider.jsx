@@ -6,7 +6,8 @@ import { ChevronLeft, ChevronRight } from 'lucide-react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-import CategoryCardWithSingleImage from '../category-cards/SingleCardWithImage';
+import CategoryCardWithSingleImage from '../cards/category-cards/SingleCardWithImage';
+import FeatureDoorCard from '../cards/feature-door-cards/FeatureDoorCard';
 
 /**
  * CategorySlider Component
@@ -14,11 +15,11 @@ import CategoryCardWithSingleImage from '../category-cards/SingleCardWithImage';
  */
 const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
   return (
-    <div className="relative group  sm:px-5 lg:px-20">
+    <div className="relative px-2 sm:px-5 lg:px-20">
       <Swiper
         modules={[Navigation, Pagination]}
         spaceBetween={16}
-        slidesPerView={2.5}
+        slidesPerView={cardType === "singleCard" ? 2.5 : cardType === "featuredProductCards" ? 1.5 : 2.5}
         navigation={{
           prevEl: '.swiper-button-prev-custom',
           nextEl: '.swiper-button-next-custom',
@@ -26,22 +27,22 @@ const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
         breakpoints={{
           // when window width is >= 640px
           640: {
-            slidesPerView: 4.5,
+            slidesPerView: cardType === "singleCard" ? 4.5 : cardType === "featuredProductCards" ? 3 : 4.5,
             spaceBetween: 20
           },
           // when window width is >= 1024px
           1024: {
-            slidesPerView: 6.5,
+            slidesPerView: cardType === "singleCard" ? 6.5 : cardType === "featuredProductCards" ? 4.5 : 6.5,
             spaceBetween: 24
           },
           // when window width is >= 1280px
           1280: {
-            slidesPerView: 8.5,
+            slidesPerView: cardType === "singleCard" ? 8.5 : cardType === "featuredProductCards" ? 4.5 : 8.5,
             spaceBetween: 24
           },
           // when window width is >= 1536px
           1536: {
-            slidesPerView: cardType === "singleCard" ? 10 : 8.5,
+            slidesPerView: cardType === "singleCard" ? 10 : cardType === "featuredProductCards" ? 5.5 : 10,
             spaceBetween: 24
           }
         }}
@@ -50,7 +51,8 @@ const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
         {items?.map((item) => (
           <SwiperSlide key={item.id}>
             {
-              cardType === "singleCard" && <CategoryCardWithSingleImage item={item} />
+              cardType === "singleCard" && <CategoryCardWithSingleImage item={item} /> ||
+              cardType === "featuredProductCards" && <FeatureDoorCard product={item} />
             }
           </SwiperSlide>
         ))}
