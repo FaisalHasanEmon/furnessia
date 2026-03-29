@@ -43,7 +43,7 @@ const FeatureDoorCard = ({ product }) => {
         </div>
 
         {/* Hover Overlays */}
-        <div className="absolute inset-x-0 bottom-2 px-2 flex items-center justify-between opacity-0 transition-all duration-300 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0">
+        <div className="absolute inset-x-0 bottom-2 px-2 flex items-center justify-between opacity-100 lg:opacity-0 transition-all duration-300 lg:group-hover:opacity-100 translate-y-0 lg:translate-y-2 lg:group-hover:translate-y-0">
           <button className="flex-1 mr-3 bg-white/95  text-[#4A5565] py-2.5 rounded-full text-sm font-medium shadow-xl flex items-center justify-center gap-2 hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 leading-5">
             Details View <ArrowRightIcon size={14} />
           </button>

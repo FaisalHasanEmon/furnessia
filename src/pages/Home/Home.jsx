@@ -7,6 +7,7 @@ import FurnessiaVideo from '../../components/furnessia-video/FurnessiaVideo'
 import ShopByCategory from '../../components/shop-by-category/ShopByCategory'
 import Inovation from '../../components/inovation/Inovation'
 import ModernAndDurableDoors from '../../components/modern-and-durable-doors/ModernAndDurableDoors'
+import FeaturedProducts from '../../components/featured-products/FeaturedProducts'
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <ShopByCategory />
       <DefineYourSpace />
       <Inovation />
+      <FeaturedProducts />
       <ModernAndDurableDoors />
       <FurnessiaVideo />
       <Cta />
