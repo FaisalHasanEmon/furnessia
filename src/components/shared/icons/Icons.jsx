@@ -462,3 +462,54 @@ export const HeartFilledIcon = ({ className = "", size = 20 }) => {
     </svg>
   );
 };
+
+/**
+ * uploadIcon Component
+ * @param {string} className - Optional CSS classes for the SVG
+ * @param {number} size - Size of the icon (default: 24)
+ * @returns {JSX.Element}
+ */
+export const UploadIcon = ({ className = "", size = 20 }) => {
+  return (
+    <svg width={size} height={size} className={className} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M14 10V12.6667C14 13.0203 13.8595 13.3594 13.6095 13.6095C13.3594 13.8595 13.0203 14 12.6667 14H3.33333C2.97971 14 2.64057 13.8595 2.39052 13.6095C2.14048 13.3594 2 13.0203 2 12.6667V10" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M11.3334 5.33333L8.00008 2L4.66675 5.33333" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M8 2V10" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+
+  );
+};
+
+/**
+ * palleteIcon Component
+ * @param {string} className - Optional CSS classes for the SVG
+ * @param {number} size - Size of the icon (default: 20)
+ * @returns {JSX.Element}
+ */
+export const PaletteIcon = ({ className = "", size = 20 }) => {
+  return (
+    <svg width={size} height={size} className={className} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M9.00008 4.66667C9.18418 4.66667 9.33341 4.51743 9.33341 4.33333C9.33341 4.14924 9.18418 4 9.00008 4C8.81599 4 8.66675 4.14924 8.66675 4.33333C8.66675 4.51743 8.81599 4.66667 9.00008 4.66667Z" fill="#F93914" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M11.6666 7.33366C11.8507 7.33366 11.9999 7.18442 11.9999 7.00033C11.9999 6.81623 11.8507 6.66699 11.6666 6.66699C11.4825 6.66699 11.3333 6.81623 11.3333 7.00033C11.3333 7.18442 11.4825 7.33366 11.6666 7.33366Z" fill="#F93914" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5.66659 5.33366C5.85068 5.33366 5.99992 5.18442 5.99992 5.00033C5.99992 4.81623 5.85068 4.66699 5.66659 4.66699C5.48249 4.66699 5.33325 4.81623 5.33325 5.00033C5.33325 5.18442 5.48249 5.33366 5.66659 5.33366Z" fill="#F93914" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M4.33333 8.66667C4.51743 8.66667 4.66667 8.51743 4.66667 8.33333C4.66667 8.14924 4.51743 8 4.33333 8C4.14924 8 4 8.14924 4 8.33333C4 8.51743 4.14924 8.66667 4.33333 8.66667Z" fill="#F93914" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M7.99992 1.33301C4.33325 1.33301 1.33325 4.33301 1.33325 7.99967C1.33325 11.6663 4.33325 14.6663 7.99992 14.6663C8.61725 14.6663 9.09859 14.169 9.09859 13.541C9.09859 13.2497 8.97859 12.9843 8.80725 12.791C8.61392 12.5983 8.51525 12.3563 8.51525 12.041C8.51272 11.8943 8.53976 11.7485 8.59475 11.6125C8.64974 11.4764 8.73155 11.3528 8.83532 11.2491C8.93909 11.1453 9.06268 11.0635 9.19874 11.0085C9.33479 10.9535 9.48053 10.9265 9.62725 10.929H10.9579C12.9919 10.929 14.6613 9.26034 14.6613 7.22634C14.6433 4.00767 11.6406 1.33301 7.99992 1.33301Z" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+  );
+};
+export const ParcelIcon = ({ className = "", size = 20 }) => {
+  return (
+    <svg width={size} height={size} className={className} viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M7.33333 14.4869C7.53603 14.604 7.76595 14.6656 8 14.6656C8.23405 14.6656 8.46397 14.604 8.66667 14.4869L13.3333 11.8203C13.5358 11.7034 13.704 11.5353 13.821 11.3328C13.938 11.1304 13.9998 10.9007 14 10.6669V5.33359C13.9998 5.09978 13.938 4.87013 13.821 4.6677C13.704 4.46527 13.5358 4.29717 13.3333 4.18026L8.66667 1.51359C8.46397 1.39657 8.23405 1.33496 8 1.33496C7.76595 1.33496 7.53603 1.39657 7.33333 1.51359L2.66667 4.18026C2.46418 4.29717 2.29599 4.46527 2.17897 4.6677C2.06196 4.87013 2.00024 5.09978 2 5.33359V10.6669C2.00024 10.9007 2.06196 11.1304 2.17897 11.3328C2.29599 11.5353 2.46418 11.7034 2.66667 11.8203L7.33333 14.4869Z" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M8 14.6667V8" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M2.19336 4.66699L8.00003 8.00033L13.8067 4.66699" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+      <path d="M5 2.84668L11 6.28001" stroke="#F93914" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round" />
+    </svg>
+
+
+
+
+  );
+};

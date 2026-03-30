@@ -8,6 +8,7 @@ import ShopByCategory from '../../components/shop-by-category/ShopByCategory'
 import Inovation from '../../components/inovation/Inovation'
 import ModernAndDurableDoors from '../../components/modern-and-durable-doors/ModernAndDurableDoors'
 import FeaturedProducts from '../../components/featured-products/FeaturedProducts'
+import CustomizeProducts from '../../components/customize-products/CustomizeProducts'
 
 const Home = () => {
   return (
@@ -18,6 +19,7 @@ const Home = () => {
       <DefineYourSpace />
       <Inovation />
       <FeaturedProducts />
+      <CustomizeProducts />
       <ModernAndDurableDoors />
       <FurnessiaVideo />
       <Cta />
