@@ -39,6 +39,21 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
     avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&q=80"
   };
 
+  const NavbarNotificationButton = () => (
+    <button className="relative p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
+      <Bell size={18} strokeWidth={1.8} />
+    </button>
+  );
+
+  const NavbarCartButton = () => (
+    <button className="relative p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
+      <ShoppingCart size={18} strokeWidth={1.8} />
+      <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full leading-none">
+        2
+      </span>
+    </button>
+  );
+
   const UserDropdown = () => (
     <div className="relative group/user">
       <button className="flex items-center justify-center p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150 relative z-10">
@@ -46,7 +61,7 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
       </button>
 
       {/* Invisible hover bridge to prevent menu closing when moving cursor */}
-      <div className="hidden group-hover/user:block absolute top-[100%] right-0 h-4 w-full bg-transparent z-40" />
+      <div className="hidden group-hover/user:block absolute top-full right-0 h-4 w-full bg-transparent z-40" />
 
       {/* Dropdown Card */}
       <div className="absolute right-0 top-[calc(100%+8px)] w-[260px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 opacity-0 invisible group-hover/user:opacity-100 group-hover/user:visible -translate-y-2 group-hover/user:translate-y-0 transition-all duration-300 z-50 overflow-hidden font-inter">
@@ -92,7 +107,7 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
             <span className="font-medium">Transaction History</span>
           </Link>
 
-          <div className="h-[1px] w-full bg-gray-100 my-2" />
+          <div className="h-px w-full bg-gray-100 my-2" />
 
           <button className="flex items-center gap-3 px-3 py-2.5 text-[14px] text-[#4B5563] hover:text-[#FF4D30] hover:bg-red-50 rounded-xl transition-colors w-full text-left">
             <LogOut size={16} strokeWidth={2} />
@@ -195,17 +210,10 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
                     </button>
 
                     {/* Cart */}
-                    <button className="relative p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
-                      <ShoppingCart size={18} strokeWidth={1.8} />
-                      <span className="absolute -top-0.5 -right-0.5 bg-red-500 text-white text-[9px] font-bold w-4 h-4 flex items-center justify-center rounded-full leading-none">
-                        2
-                      </span>
-                    </button>
+                    <NavbarCartButton />
 
                     {/* Notification Bell */}
-                    <button className="relative p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
-                      <Bell size={18} strokeWidth={1.8} />
-                    </button>
+                    <NavbarNotificationButton />
 
                     {/* User Dropdown (Desktop) */}
                     <UserDropdown />
@@ -219,8 +227,8 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
                     </button>
                   </div>
 
-                  {/* Mobile & Tablet: Search + User + Hamburger */}
-                  <div className="flex lg:hidden items-center gap-2">
+                  {/* Mobile & Tablet: Search + Cart + User + Hamburger */}
+                  <div className="flex lg:hidden items-center gap-1 sm:gap-2">
                     <LanguageSwitcher />
                     <button
                       onClick={() => setIsSearchOpen(true)}
@@ -228,6 +236,16 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
                     >
                       <Search size={18} strokeWidth={1.8} />
                     </button>
+
+                    {/* Notification Icon (Visible on md, hidden on sm) */}
+                    <div className="hidden md:block">
+                      <NavbarNotificationButton />
+                    </div>
+
+                    {/* Cart Icon (Visible on md, hidden on sm) */}
+                    <div className="hidden md:block">
+                      <NavbarCartButton />
+                    </div>
 
                     {/* User Dropdown (Visible on md, hidden on sm) */}
                     <div className="hidden md:block">
