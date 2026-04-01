@@ -1,5 +1,7 @@
-import { StarIcon, HeartOutlineIcon, ArrowRightIcon } from '../../icons/Icons';
+import { useState, useEffect } from 'react';
+import { StarIcon, HeartOutlineIcon, HeartFilledIcon, ArrowRightIcon } from '../../icons/Icons';
 import { Link } from 'react-router';
+import { toggleWishlist, isInWishlist } from '../../../../utils/wishlistUtils';
 
 /**
  * FeatureDoorCard Component
@@ -7,6 +9,7 @@ import { Link } from 'react-router';
  */
 const FeatureDoorCard = ({ product }) => {
   const {
+    id,
     image,
     category,
     name,
@@ -17,6 +20,15 @@ const FeatureDoorCard = ({ product }) => {
     emi,
     badges,
   } = product;
+
+  const [isWishlisted, setIsWishlisted] = useState(false);
+
+  useEffect(() => {
+    if (id) {
+      setIsWishlisted(isInWishlist(id));
+    }
+  }, [id]);
+
 
   return (
     <Link to={`/product/${product.id}`} className="group flex flex-col gap-4 font-albert cursor-pointer ">
@@ -48,14 +60,22 @@ const FeatureDoorCard = ({ product }) => {
           <button className="flex-1 mr-3 bg-white/95  text-[#4A5565] py-2.5 rounded-full text-sm font-medium shadow-xl flex items-center justify-center gap-2 hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 leading-5">
             Details View <ArrowRightIcon size={14} />
           </button>
-          <button 
+          <button
             onClick={(e) => {
               e.preventDefault();
               e.stopPropagation();
+              const newState = toggleWishlist(product);
+              setIsWishlisted(newState);
             }}
-            className="h-10 w-10 bg-[#1A1A1A]/80 backdrop-blur-sm text-white rounded-full flex items-center justify-center shadow-xl hover:bg-black transition-all duration-300"
+            className={`h-10 w-10 bg-[#1A1A1A]/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-xl hover:bg-black transition-all duration-300 ${
+              isWishlisted ? 'text-red-500' : 'text-white hover:text-red-500'
+            }`}
           >
-            <HeartOutlineIcon size={20} color="red" />
+            {isWishlisted ? (
+              <HeartFilledIcon size={20} />
+            ) : (
+              <HeartOutlineIcon size={20} />
+            )}
           </button>
         </div>
       </div>

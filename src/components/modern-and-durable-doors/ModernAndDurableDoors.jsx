@@ -35,6 +35,11 @@ const ModernAndDurableDoors = () => {
       </section>
     );
   }
+
+
+
+
+
   return (
 
     <section className="max-w-480 mx-auto px-4 sm:px-6 lg:px-20 py-8 md:py-12 lg:py-24 space-y-4 bg-[#FFFFFF]">

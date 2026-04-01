@@ -9,11 +9,13 @@ import 'swiper/css/pagination';
 import CategoryCardWithSingleImage from '../cards/category-cards/SingleCardWithImage';
 import FeatureDoorCard from '../cards/feature-door-cards/FeatureDoorCard';
 
+
 /**
  * CategorySlider Component
  * @param {Array} items - Array of category objects { id, image, title, productCount }
  */
 const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
+
   return (
     <div className="relative px-2 sm:px-5 lg:px-20">
       <Swiper
@@ -59,10 +61,12 @@ const CategorySlider = ({ items = [], cardType = "singleCard" }) => {
       </Swiper>
 
       {/* Custom Navigation Buttons */}
+      {/* Left Navigation Button */}
       <button className="swiper-button-prev-custom absolute left-4 sm:left-6 lg:left-15 top-[42.5%] -translate-y-1/2 z-10 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 swiper-button-disabled:opacity-20 hover:bg-black">
         <ChevronLeft size={20} />
       </button>
-      <button className="swiper-button-next-custom absolute right-4 sm:right-6 lg:right-15 top-[42.5%] -translate-y-1/2 z-10 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 swiper-button-disabled:opacity-20 hover:bg-black">
+      {/* Right Navigation Button */}
+      <button className="hover:scale-3d  swiper-button-next-custom absolute right-4 sm:right-6 lg:right-15 top-[42.5%] -translate-y-1/2 z-10 w-10 h-10 bg-gray-900 text-white rounded-full flex items-center justify-center shadow-lg transition-all duration-300 swiper-button-disabled:opacity-20 hover:bg-black">
         <ChevronRight size={20} />
       </button>
     </div>
