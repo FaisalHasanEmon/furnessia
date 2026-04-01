@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { useParams, Link } from 'react-router';
 import { Swiper, SwiperSlide } from 'swiper/react';
@@ -49,10 +48,11 @@ const ProductDetails = () => {
   };
 
   return (
-    <div className="bg-white min-h-screen font-albert border max-w-480 px-20">
+
+    <div className="bg-white min-h-screen font-albert w-full max-w-480  mx-auto px-4 sm:px-6 lg:px-10 xl:px-20">
 
       {/* ── BREADCRUMB ── */}
-      <div className="  mx-auto  py-4">
+      <div className="mx-auto py-4">
         <nav className="flex items-center gap-2 text-[13px] text-[#6B7280]">
           <button className="h-7 w-7 flex items-center justify-center border border-gray-200 rounded-md hover:bg-gray-50">
             <ChevronLeft size={13} />
@@ -70,21 +70,21 @@ const ProductDetails = () => {
           <ChevronRight size={12} className="text-gray-400" />
           <Link to="/furniture" className="hover:text-black">Furniture</Link>
           <ChevronRight size={12} className="text-gray-400" />
-          <span className="text-[#1A1A1A]">Scandinavian Armchair</span>
+          <span className="text-[#1A1A1A] hidden sm:inline">Scandinavian Armchair</span>
+          <span className="text-[#1A1A1A] sm:hidden">Armchair</span>
         </nav>
       </div>
 
       {/* ── MAIN TWO-COLUMN LAYOUT ── */}
-      <div className="w-full pb-16 border border-red-500">
-        <div className="flex flex-col lg:flex-row gap-8 items-start border border-blue-500">
+      <div className="w-full pb-16">
+        <div className="flex flex-col lg:flex-row gap-8 items-start">
 
-          {/* ════ LEFT COLUMN — flex-1 ════ */}
-          <div className="flex-1 min-w-0 flex flex-col gap-0">
+          {/* ════ LEFT COLUMN ════ */}
+          <div className="w-full lg:flex-1 lg:min-w-0 flex flex-col gap-0">
 
             {/* Main image viewer */}
             <div
-              className="relative bg-[#F4F5F7] rounded-2xl overflow-hidden flex items-center justify-center"
-              style={{ height: '420px' }}
+              className="relative bg-[#F4F5F7] rounded-2xl overflow-hidden flex items-center justify-center h-64 sm:h-80 md:h-96 lg:h-[420px]"
             >
               <Swiper
                 loop={true}
@@ -93,7 +93,7 @@ const ProductDetails = () => {
                 className="w-full h-full"
               >
                 {product.images.map((img, i) => (
-                  <SwiperSlide key={i} className="flex items-center justify-center p-10">
+                  <SwiperSlide key={i} className="flex items-center justify-center p-6 sm:p-10">
                     <img
                       src={img}
                       className="object-contain w-full h-full"
@@ -108,18 +108,23 @@ const ProductDetails = () => {
             </div>
 
             {/* Thumbnail strip */}
-            <div className="relative mt-4 px-10">
+            <div className="relative mt-4 px-8 sm:px-10">
               <Swiper
                 onSwiper={setThumbsSwiper}
                 loop={true}
-                spaceBetween={12}
-                slidesPerView={6}
+                spaceBetween={8}
+                slidesPerView={3}
+                breakpoints={{
+                  480: { slidesPerView: 4, spaceBetween: 10 },
+                  640: { slidesPerView: 5, spaceBetween: 12 },
+                  768: { slidesPerView: 6, spaceBetween: 12 },
+                }}
                 freeMode={true}
                 watchSlidesProgress={true}
                 modules={[FreeMode, Navigation, Thumbs]}
                 navigation={{ prevEl: '.thumb-prev', nextEl: '.thumb-next' }}
                 className="product-thumbs"
-                style={{ height: '88px' }}
+                style={{ height: '72px' }}
               >
                 {product.images.map((img, i) => (
                   <SwiperSlide
@@ -130,22 +135,22 @@ const ProductDetails = () => {
                   </SwiperSlide>
                 ))}
               </Swiper>
-              <button className="thumb-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-[#1B2631] text-white rounded-full flex items-center justify-center shadow hover:bg-black transition-all">
-                <ChevronLeft size={16} />
+              <button className="thumb-prev absolute left-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 sm:w-8 sm:h-8 bg-[#1B2631] text-white rounded-full flex items-center justify-center shadow hover:bg-black transition-all">
+                <ChevronLeft size={14} />
               </button>
-              <button className="thumb-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-8 h-8 bg-[#1B2631] text-white rounded-full flex items-center justify-center shadow hover:bg-black transition-all">
-                <ChevronRight size={16} />
+              <button className="thumb-next absolute right-0 top-1/2 -translate-y-1/2 z-10 w-7 h-7 sm:w-8 sm:h-8 bg-[#1B2631] text-white rounded-full flex items-center justify-center shadow hover:bg-black transition-all">
+                <ChevronRight size={14} />
               </button>
             </div>
 
             {/* ── TABS ── */}
             <div className="mt-8">
-              <div className="flex gap-8 border-b border-gray-200 text-[#6B7280] text-[16px] font-medium">
+              <div className="flex gap-4 sm:gap-8 border-b border-gray-200 text-[#6B7280] text-[14px] sm:text-[16px] font-medium overflow-x-auto scrollbar-hide">
                 {['Description', 'Product Video', 'Specs', 'Care', 'Warranty'].map((tab) => (
                   <button
                     key={tab}
                     onClick={() => setActiveTab(tab)}
-                    className={`pb-3 relative transition-colors whitespace-nowrap ${activeTab === tab ? 'text-[#1A1A1A] font-bold' : 'hover:text-[#1A1A1A]'}`}
+                    className={`pb-3 relative transition-colors whitespace-nowrap flex-shrink-0 ${activeTab === tab ? 'text-[#1A1A1A] font-bold' : 'hover:text-[#1A1A1A]'}`}
                   >
                     {tab}
                     {activeTab === tab && (
@@ -174,7 +179,7 @@ const ProductDetails = () => {
                   </div>
                 )}
                 {activeTab !== 'Product Video' && (
-                  <div className="p-8 bg-[#F9FAFB] rounded-2xl text-[#4B5563]">
+                  <div className="p-6 sm:p-8 bg-[#F9FAFB] rounded-2xl text-[#4B5563]">
                     <h3 className="text-xl font-bold text-[#1A1A1A] mb-3">{activeTab}</h3>
                     <p className="leading-relaxed text-sm">Placeholder content for the {activeTab} section.</p>
                   </div>
@@ -184,11 +189,11 @@ const ProductDetails = () => {
           </div>
           {/* ════ END LEFT COLUMN ════ */}
 
-          {/* ════ RIGHT COLUMN — fixed 310px ════ */}
-          <div className="w-[310px] flex-shrink-0 flex flex-col gap-4">
+          {/* ════ RIGHT COLUMN ════ */}
+          <div className="w-full lg:w-[310px] lg:flex-shrink-0 flex flex-col gap-4">
 
             {/* Title */}
-            <h1 className="text-[20px] leading-[1.3] font-semibold text-[#1A1A1A]">
+            <h1 className="text-[18px] sm:text-[20px] leading-[1.3] font-semibold text-[#1A1A1A]">
               {product.title}
             </h1>
 
@@ -211,8 +216,8 @@ const ProductDetails = () => {
 
             {/* Price row */}
             <div className="flex items-center gap-3">
-              <span className="text-[30px] font-bold text-[#1A1A1A] leading-none">৳{product.price}</span>
-              <span className="text-[17px] text-[#9CA3AF] line-through font-medium">৳{product.oldPrice}</span>
+              <span className="text-[28px] sm:text-[30px] font-bold text-[#1A1A1A] leading-none">৳{product.price}</span>
+              <span className="text-[15px] sm:text-[17px] text-[#9CA3AF] line-through font-medium">৳{product.oldPrice}</span>
               <span className="bg-[#FF4D30] text-white text-[11px] font-bold px-2.5 py-1 rounded-full shadow-sm">
                 {product.discount}
               </span>
@@ -423,7 +428,7 @@ const ProductDetails = () => {
             </div>
 
             {/* ── 2×2 GUARANTEE CARDS ── */}
-            <div className="grid grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-2 gap-2.5">
               <div className="flex items-center gap-2.5 bg-[#FFF4ED] border border-[#FFE8D6] rounded-2xl px-3 py-3">
                 <div className="w-8 h-8 bg-white rounded-xl flex items-center justify-center text-[#F97316] shadow-sm flex-shrink-0">
                   <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -484,3 +489,5 @@ const ProductDetails = () => {
 };
 
 export default ProductDetails;
+
+
