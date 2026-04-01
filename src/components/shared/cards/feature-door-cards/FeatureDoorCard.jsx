@@ -1,4 +1,5 @@
 import { StarIcon, HeartOutlineIcon, ArrowRightIcon } from '../../icons/Icons';
+import { Link } from 'react-router';
 
 /**
  * FeatureDoorCard Component
@@ -18,7 +19,7 @@ const FeatureDoorCard = ({ product }) => {
   } = product;
 
   return (
-    <div className="group flex flex-col gap-4 font-albert cursor-pointer ">
+    <Link to={`/product/${product.id}`} className="group flex flex-col gap-4 font-albert cursor-pointer ">
       {/* Image Container */}
       <div className="relative aspect-4/5 overflow-hidden rounded-2xl bg-gray-100">
         <img
@@ -47,7 +48,13 @@ const FeatureDoorCard = ({ product }) => {
           <button className="flex-1 mr-3 bg-white/95  text-[#4A5565] py-2.5 rounded-full text-sm font-medium shadow-xl flex items-center justify-center gap-2 hover:bg-[#1A1A1A] hover:text-white transition-all duration-300 leading-5">
             Details View <ArrowRightIcon size={14} />
           </button>
-          <button className="h-10 w-10 bg-[#1A1A1A]/80 backdrop-blur-sm text-white rounded-full flex items-center justify-center shadow-xl hover:bg-black transition-all duration-300">
+          <button 
+            onClick={(e) => {
+              e.preventDefault();
+              e.stopPropagation();
+            }}
+            className="h-10 w-10 bg-[#1A1A1A]/80 backdrop-blur-sm text-white rounded-full flex items-center justify-center shadow-xl hover:bg-black transition-all duration-300"
+          >
             <HeartOutlineIcon size={20} color="red" />
           </button>
         </div>
@@ -81,7 +88,7 @@ const FeatureDoorCard = ({ product }) => {
           0% EMI ৳{emi.toLocaleString()}/mo
         </div>
       </div>
-    </div>
+    </Link>
   );
 };
 
