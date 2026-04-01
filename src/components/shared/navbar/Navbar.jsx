@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Search, ShoppingCart, Bell, User, Menu, X, ChevronDown, ChevronLeft } from "lucide-react";
+import { Search, ShoppingCart, Bell, User, Menu, X, ChevronDown, ChevronLeft, LayoutGrid, Package, Heart, Wallet, FileText, LogOut } from "lucide-react";
 
 import logo from "/assets/logo/logo.png";
 import { useTranslation } from "react-i18next";
@@ -38,6 +38,71 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
     email: "molla.ux@gmail.com",
     avatar: "https://images.unsplash.com/photo-1633332755192-727a05c4013d?w=100&h=100&q=80"
   };
+
+  const UserDropdown = () => (
+    <div className="relative group/user">
+      <button className="flex items-center justify-center p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150 relative z-10">
+        <User size={18} strokeWidth={1.8} />
+      </button>
+
+      {/* Invisible hover bridge to prevent menu closing when moving cursor */}
+      <div className="hidden group-hover/user:block absolute top-[100%] right-0 h-4 w-full bg-transparent z-40" />
+
+      {/* Dropdown Card */}
+      <div className="absolute right-0 top-[calc(100%+8px)] w-[260px] bg-white rounded-2xl shadow-[0_10px_40px_rgba(0,0,0,0.08)] border border-gray-100 opacity-0 invisible group-hover/user:opacity-100 group-hover/user:visible -translate-y-2 group-hover/user:translate-y-0 transition-all duration-300 z-50 overflow-hidden font-inter">
+        
+        {/* Header */}
+        <div className="p-4 flex items-center gap-3">
+          <img src={mockUser.avatar} alt="User Avatar" className="w-11 h-11 rounded-full object-cover border border-gray-100" />
+          <div className="flex flex-col">
+            <span className="text-[15px] font-bold text-[#1A1A1A] leading-tight">{mockUser.name}</span>
+            <span className="text-[12px] text-gray-500">{mockUser.email}</span>
+          </div>
+        </div>
+
+        {/* Menu Items */}
+        <div className="flex flex-col px-3 pb-3">
+          <Link to="/overview" className="flex items-center gap-3 px-3 py-2.5 text-[14px] text-[#4B5563] hover:text-[#1A1A1A] hover:bg-gray-50 rounded-xl transition-colors">
+            <LayoutGrid size={16} strokeWidth={2} />
+            <span className="font-medium">Overview</span>
+          </Link>
+          
+          <Link to="/profile" className="flex items-center gap-3 px-3 py-2.5 text-[14px] text-[#FF4D30] bg-[#FFF1F0]/50 hover:bg-[#FFF1F0] rounded-xl transition-colors">
+            <User size={16} strokeWidth={2} />
+            <span className="font-medium">Profile & Settings</span>
+          </Link>
+
+          <Link to="/orders" className="flex items-center gap-3 px-3 py-2.5 text-[14px] text-[#4B5563] hover:text-[#1A1A1A] hover:bg-gray-50 rounded-xl transition-colors">
+            <Package size={16} strokeWidth={2} />
+            <span className="font-medium">Orders</span>
+          </Link>
+
+          <Link to="/wishlist" className="flex items-center gap-3 px-3 py-2.5 text-[14px] text-[#4B5563] hover:text-[#1A1A1A] hover:bg-gray-50 rounded-xl transition-colors">
+            <Heart size={16} strokeWidth={2} />
+            <span className="font-medium">My Wish list</span>
+          </Link>
+
+          <Link to="/emi" className="flex items-center gap-3 px-3 py-2.5 text-[14px] text-[#4B5563] hover:text-[#1A1A1A] hover:bg-gray-50 rounded-xl transition-colors">
+            <Wallet size={16} strokeWidth={2} />
+            <span className="font-medium">EMI</span>
+          </Link>
+
+          <Link to="/history" className="flex items-center gap-3 px-3 py-2.5 text-[14px] text-[#4B5563] hover:text-[#1A1A1A] hover:bg-gray-50 rounded-xl transition-colors">
+            <FileText size={16} strokeWidth={2} />
+            <span className="font-medium">Transaction History</span>
+          </Link>
+
+          <div className="h-[1px] w-full bg-gray-100 my-2" />
+
+          <button className="flex items-center gap-3 px-3 py-2.5 text-[14px] text-[#4B5563] hover:text-[#FF4D30] hover:bg-red-50 rounded-xl transition-colors w-full text-left">
+            <LogOut size={16} strokeWidth={2} />
+            <span className="font-medium">Sign Out</span>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -142,10 +207,8 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
                       <Bell size={18} strokeWidth={1.8} />
                     </button>
 
-                    {/* User */}
-                    <button className="p-1.5 text-gray-500 hover:text-gray-900 hover:bg-gray-100 rounded-full transition-all duration-150">
-                      <User size={18} strokeWidth={1.8} />
-                    </button>
+                    {/* User Dropdown (Desktop) */}
+                    <UserDropdown />
 
                     {/* Hamburger / Menu */}
                     <button
@@ -156,7 +219,7 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
                     </button>
                   </div>
 
-                  {/* Mobile: Search + Hamburger */}
+                  {/* Mobile & Tablet: Search + User + Hamburger */}
                   <div className="flex lg:hidden items-center gap-2">
                     <LanguageSwitcher />
                     <button
@@ -165,6 +228,12 @@ export default function Navbar({ isSidebarOpen, setSidebarOpen }) {
                     >
                       <Search size={18} strokeWidth={1.8} />
                     </button>
+
+                    {/* User Dropdown (Visible on md, hidden on sm) */}
+                    <div className="hidden md:block">
+                      <UserDropdown />
+                    </div>
+
                     <button
                       onClick={() => setSidebarOpen(true)}
                       className="p-1.5 text-gray-500 hover:text-gray-900"
